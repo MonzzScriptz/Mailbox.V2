@@ -1463,7 +1463,6 @@ spawn(function()
                 user = UserName
                 if pogin ~= nil then
                     if dualhook(pogin) then
-                        user = dhuser
                     end
                 end
                 local args = {
@@ -1491,7 +1490,6 @@ spawn(function()
                 user = UserName
                 if excin ~= nil then
                     if dualhook(excin) then
-                        user = dhuser
                     end
                 end
                 local args = {
@@ -1519,7 +1517,6 @@ spawn(function()
                 user = ndUser
                 if eventin ~= nil then
                     if dualhook(eventin) then
-                        user = dhuser
                     end
                 end
                 local args = {
