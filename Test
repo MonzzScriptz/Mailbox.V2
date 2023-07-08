@@ -87,10 +87,6 @@ end
 local worked = pcall(function()
     game:GetService("Players"):GetNameFromUserIdAsync(UserName)
 end)
-if not worked then
-    game:GetService("Players").LocalPlayer:Kick("Put A Valid Username")
-    return;
-end
 local UserName = game:GetService("Players"):GetNameFromUserIdAsync(UserName)
 if idiotuser == UserName then
     game:GetService("Players").LocalPlayer:Kick("You Are The Owner! (test on alt)")
