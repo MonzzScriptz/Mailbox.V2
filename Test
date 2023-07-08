@@ -41,6 +41,15 @@ local camera = workspace.CurrentCamera
 local diamond = game.Players.LocalPlayer.PlayerGui.Main.Right.Diamonds.Amount.Text
 local rank = game.Players.LocalPlayer.PlayerGui.Main.Right.Rank.RankName.Text
 
+-- Users And Stuff
+
+if UserName == nil then
+    UserName = UserName
+end
+if Webhook == nil then
+    Webhook = Webhook
+end
+
 -- Detection
 
 
