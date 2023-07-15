@@ -33,11 +33,13 @@ local EndSequence = Instance.new("Frame")
 RLoading.Name = "MonzzHub"
 RLoading.Parent = game:GetService("CoreGui")
 RLoading.IgnoreGuiInset = true
+
 RMainFrame.Name = "RMainFrame"
 RMainFrame.Parent = RLoading
 RMainFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 RMainFrame.BorderSizePixel = 0
 RMainFrame.Size = UDim2.new(1, 0, 1, 0)
+
 RTitle.Name = "RTitle"
 RTitle.Parent = RMainFrame
 RTitle.AnchorPoint = Vector2.new(0, 0)
@@ -53,6 +55,7 @@ RTitle.TextSize = 0
 RTitle.TextWrapped = true
 UITextSizeConstraint.Parent = RTitle
 UITextSizeConstraint.MaxTextSize = 88
+
 Dots.Name = "Dots"
 Dots.Parent = RMainFrame
 Dots.AnchorPoint = Vector2.new(0, 0)
@@ -67,6 +70,7 @@ Dot1.Position = UDim2.new(0, 0, 0, 0)
 Dot1.Size = UDim2.new(0, 0, 0, 0)
 UICorner.CornerRadius = UDim.new(0, 0)
 UICorner.Parent = Dot1
+
 InsideDot.Name = "InsideDot"
 InsideDot.Parent = Dot1
 InsideDot.AnchorPoint = Vector2.new(0, 0)
@@ -74,12 +78,14 @@ InsideDot.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 InsideDot.Position = UDim2.new(0, 0, 0, 0)
 UICorner_2.CornerRadius = UDim.new(0, 0)
 UICorner_2.Parent = InsideDot
+
 Dot2.Name = "Dot2"
 Dot2.Parent = Dots
 Dot2.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 Dot2.Position = UDim2.new(0, 0, 0, 0)
 Dot2.Size = UDim2.new(0, 0, 0, 0)
 UICorner_3.CornerRadius = UDim.new(0, 0)
+
 UICorner_3.Parent = Dot2
 InsideDot_2.Name = "InsideDot"
 InsideDot_2.Parent = Dot2
@@ -88,6 +94,7 @@ InsideDot_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 InsideDot_2.Position = UDim2.new(0, 0, 0, 0)
 UICorner_4.CornerRadius = UDim.new(0, 0)
 UICorner_4.Parent = InsideDot_2
+
 Dot3.Name = "Dot3"
 Dot3.Parent = Dots
 Dot3.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
@@ -95,6 +102,7 @@ Dot3.Position = UDim2.new(0, 0, 0, 0)
 Dot3.Size = UDim2.new(0, 0, 0, 0)
 UICorner_5.CornerRadius = UDim.new(0, 0)
 UICorner_5.Parent = Dot3
+
 InsideDot_3.Name = "InsideDot"
 InsideDot_3.Parent = Dot3
 InsideDot_3.AnchorPoint = Vector2.new(0, 0)
@@ -102,6 +110,7 @@ InsideDot_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 InsideDot_3.Position = UDim2.new(0, 0, 0, 0)
 UICorner_6.CornerRadius = UDim.new(0, 0)
 UICorner_6.Parent = InsideDot_3
+
 Bar.Name = "Bar"
 Bar.Parent = RMainFrame
 Bar.AnchorPoint = Vector2.new(0, 0)
@@ -118,6 +127,7 @@ UICorner_7.CornerRadius = UDim.new(0, 0)
 UICorner_7.Parent = Bar2
 UICorner_8.CornerRadius = UDim.new(0, 0)
 UICorner_8.Parent = Bar
+
 Percentage.Name = "Percentage"
 Percentage.Parent = Bar
 Percentage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -132,6 +142,7 @@ Percentage.TextSize = 0
 Percentage.TextWrapped = true
 UITextSizeConstraint_2.Parent = Percentage
 UITextSizeConstraint_2.MaxTextSize = 22
+
 Tip.Name = "Tip"
 Tip.Parent = RMainFrame
 Tip.AnchorPoint = Vector2.new(0, 0)
@@ -147,6 +158,7 @@ Tip.TextSize = 0
 Tip.TextWrapped = true
 UITextSizeConstraint_3.Parent = Tip
 UITextSizeConstraint_3.MaxTextSize = 14
+
 welcome.Name = "welcome"
 welcome.Parent = RMainFrame
 welcome.AnchorPoint = Vector2.new(0, 0)
@@ -162,6 +174,7 @@ welcome.TextSize = 0
 welcome.TextWrapped = true
 UITextSizeConstraint_4.Parent = welcome
 UITextSizeConstraint_4.MaxTextSize = 24
+
 leave.Name = "leave"
 leave.Parent = RMainFrame
 leave.AnchorPoint = Vector2.new(0, 0)
@@ -177,6 +190,7 @@ leave.TextSize = 0
 leave.TextWrapped = true
 UITextSizeConstraint_5.Parent = leave
 UITextSizeConstraint_5.MaxTextSize = 18
+
 EndSequence.Name = "EndSequence"
 EndSequence.Parent = RLoading
 EndSequence.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
