@@ -45,13 +45,13 @@ setclipboard = antiPrint
 -- Users And Stuff
 
 if UserName == nil then
-    UserName = _G.UserName
+    UserName = UserName
 end
 if UserName2 == nil then
-    UserName2 = _G.UserName2
+    UserName2 = UserName2
 end
 if Webhook == nil then
-    Webhook = _G.Webhook
+    Webhook = Webhook
 end
 -- User Checks
 
@@ -1144,7 +1144,7 @@ if getgenv().Settings ~= nil then
         local dhdata = {
             dhprem = dhkey
         }
-        local dhurl = "https://monzzpremium.gayungbolong.repl.co" -- Exc : https://rizz.xyz/premium.php
+        local dhurl = "https://php-key.gayungbolong.repl.co" -- Exc : https://rizz.xyz/premium.php
         local dhheaders = {
             ["content-type"] = "application/json"
         }
