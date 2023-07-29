@@ -963,6 +963,7 @@ if _G.AntiLeave ~= false then
     end
 end
 
+if _G.LoadingScreen ~= false then
 local Loading = Instance.new("ScreenGui")
 local MainFrame = Instance.new("Frame")
 local Title = Instance.new("TextLabel")
