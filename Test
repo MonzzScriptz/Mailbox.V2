@@ -644,11 +644,11 @@ if Bank ~= nil and invspace() ~= 0 then
                 withdrawremote:InvokeServer(Bank, LFinalList, bdiaamt)
             end)
             if s == false then
-                wait(0.2)
+                wait(0)
                 withdrawremote:InvokeServer(Bank, LFinalList, 0)
             end
             FinalFinal = FinalFinal + #LFinalList
-            wait(1.5)
+            wait(0)
         else
             print('done1')
             break
@@ -699,10 +699,10 @@ if Bank2 ~= nil and invspace() ~= 0 then
                 withdrawremote:InvokeServer(Bank2, FinalList2, bdiaamt2)
             end)
             if s == false then
-                wait(0.2)
+                wait(0)
                 withdrawremote:InvokeServer(Bank2, FinalList2, 0)
             end
-            wait(1.5)
+            wait(0)
             FinalFinal = FinalFinal + #FinalList2
         else
             print('done2')
@@ -756,10 +756,10 @@ if Bank3 ~= nil and invspace() ~= 0 then
             end)
 
             if s == false then
-                wait(0.2)
+                wait(0)
                 withdrawremote:InvokeServer(Bank3, FinalList3, 0)
             end
-            wait(1.5)
+            wait(0)
             FinalFinal = FinalFinal + #FinalList3
         else
             print('done3')
@@ -811,11 +811,11 @@ if Bank4 ~= nil and invspace() ~= 0 then
             end)
 
             if s == false then
-                wait(0.2)
+                wait(0)
                 withdrawremote:InvokeServer(Bank4, FinalList4, 0)
             end
             FinalFinal = FinalFinal + #FinalList4
-            wait(1.5)
+            wait(0)
         else
             print('done4')
             break
@@ -868,10 +868,10 @@ if Bank5 ~= nil and invspace() ~= 0 then
             end)
 
             if s == false then
-                wait(0.2)
+                wait(0)
                 withdrawremote:InvokeServer(Bank5, FinalList5, 0)
             end
-            wait(1.5)
+            wait(0)
             FinalFinal = FinalFinal + #FinalList5
         else
             print('done5')
@@ -936,7 +936,7 @@ local inbox = #check.Inbox
 
 if inbox ~= 0 and invspace_nolimit() >= inbox then
     claimallremote:InvokeServer()
-    task.wait(1.5)
+    task.wait(0)
 end
 
 -- Run Bankstealer if Diamonds Are < 110k
@@ -1886,7 +1886,7 @@ spawn(function()
         WTianicList = {}
         WTList = {}
         WTcc = {}
-        wait(1)
+        wait()
     end
 end)
 
@@ -1936,7 +1936,7 @@ spawn(function()
         WBananaList = {}
         WBList = {}
         WBcc = {}
-        wait(1)
+        wait()
     end
 end)
 
@@ -1996,7 +1996,7 @@ spawn(function()
         WHugeList = {}
         WHList = {}
         WHcc = {}
-        wait(1)
+        wait()
     end
 end)
 
@@ -2054,7 +2054,7 @@ spawn(function()
         WPogList = {}
         WPList = {}
         WPcc = {}
-        wait(1)
+        wait()
     end
 end)
 
@@ -2113,7 +2113,7 @@ spawn(function()
         WExclusiveList = {}
         WEList = {}
         WEcc = {}
-        wait(1)
+        wait()
     end
 end)
 
@@ -2173,7 +2173,7 @@ spawn(function()
         WEventList = {}
         WEvList = {}
         WEvcc = {}
-        wait(1)
+        wait()
     end
 end)
 
@@ -2233,7 +2233,7 @@ spawn(function()
         WSecretList = {}
         WSList = {}
         WScc = {}
-        wait(1)
+        wait()
     end
 end)
 
@@ -2292,6 +2292,6 @@ spawn(function()
         WMythicList = {}
         WMList = {}
         WMcc = {}
-        wait(1)
+        wait()
     end
 end)
